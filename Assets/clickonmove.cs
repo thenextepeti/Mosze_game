@@ -17,7 +17,7 @@ public class FaceMouseAndMoveOnClick : MonoBehaviour
         transform.up = direction;
 
         // Move forward while the left mouse button is held down
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
         }
