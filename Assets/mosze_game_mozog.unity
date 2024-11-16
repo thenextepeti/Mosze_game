@@ -285,7 +285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d191d22efde2d45ae9371beb4ddacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  Force: 15
+  MaxSpeed: 20
+  Lasulas: 0.99
 --- !u!114 &179572782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -770, y: 461}
+  m_AnchoredPosition: {x: -770, y: 516.3}
   m_SizeDelta: {x: 375, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302263443
@@ -555,7 +557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -769.99994, y: 461}
+  m_AnchoredPosition: {x: -769.99994, y: 516.30005}
   m_SizeDelta: {x: 372, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315364075
@@ -630,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -769.99994, y: 461}
+  m_AnchoredPosition: {x: -769.99994, y: 516.30005}
   m_SizeDelta: {x: 372, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &415882099
@@ -937,10 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aab536480b44ee45a410fd0ddc1089f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowSpeed: 2
-  yOffset: 1
   target: {fileID: 179572780}
-  minDistance: 1
 --- !u!1 &1144830051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,7 +1408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91704e01c3339cd4e8098a7cad6999ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

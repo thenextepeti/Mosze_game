@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class FaceMouseAndMoveOnClick : MonoBehaviour
 {
-    public float Force;
+    public float Force = 15;
     Rigidbody2D Rigidbody;
-    public float MaxSpeed;
-    public float Lasulas;
+    public float MaxSpeed = 20;
+    public float Lasulas = 0.99f;
     void Start()
     {
         Rigidbody = GetComponent<Rigidbody2D>();
@@ -33,10 +33,6 @@ public class FaceMouseAndMoveOnClick : MonoBehaviour
             Rigidbody.velocity = Vector2.ClampMagnitude(Rigidbody.velocity, MaxSpeed);
         }
         //sebesség csökkenés
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Rigidbody.velocity = Rigidbody.velocity * Lasulas;
-        }
-
+        Rigidbody.velocity = Rigidbody.velocity * Lasulas;
     }
 }
