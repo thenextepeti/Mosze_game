@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/startMenu.unity
+    guid: 8baf218738b50b14fa01d397e789a397
+  - enabled: 1
+    path: Assets/mosze_game_mozog.unity
+    guid: 17d90ded5ec1e2845b1c67ffcccb4918
   m_configObjects: {}
