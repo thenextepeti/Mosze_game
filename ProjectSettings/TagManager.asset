@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Undefined
   - Bullet
+  - aszteroida
+  - Undefined
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - "\u0170rhaj\xF3"
   - 
   - 
   - 

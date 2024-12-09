@@ -7,10 +7,10 @@ public class shootDetection : MonoBehaviour
     public int health = 3; // Az aszteroida életereje
     public GameObject explosionEffect; // Robbanás effekt prefab (opcionális)
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         // Ellenõrizzük, hogy a találkozó objektum a lövedék-e
-        if (other.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
             Debug.Log("Aszteroida találatot kapott!");
 

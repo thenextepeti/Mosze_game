@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
 
         // Set the bullet velocity
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint.right * bulletSpeed;
+        rb.velocity = firePoint.up * bulletSpeed;
 
         // Optional: Destroy the bullet after a certain time to avoid clutter
         Destroy(bullet, 2f);
