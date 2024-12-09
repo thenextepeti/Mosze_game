@@ -11,22 +11,16 @@ public class EnemySpawn : MonoBehaviour
 
     public Camera center;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time % 2f == 0)  // Például minden 2 másodpercben
+        if (Time.time % 4f == 0)  // Például minden 2 másodpercben
         {
             SpawnEnemyinCirce();
         }
     }
 
-    void SpawnEnemyinCirce()
+    public void SpawnEnemyinCirce()
     {
         // Véletlenszerû szög a teljes 360 fokból
         float randomAngle = Random.Range(0f, 360f);
