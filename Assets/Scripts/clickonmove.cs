@@ -5,12 +5,12 @@ using UnityEngine;
 public class FaceMouseAndMoveOnClick : MonoBehaviour
 {
     public float Force = 15;
-    Rigidbody2D Rigidbody;
+    Rigidbody2D rb;
     public float MaxSpeed = 20;
     public float Lasulas = 0.99f;
     void Start()
     {
-        Rigidbody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
     }
     void FixedUpdate()
@@ -24,15 +24,16 @@ public class FaceMouseAndMoveOnClick : MonoBehaviour
         // Move forward while the right mouse button is held down
         if (Input.GetMouseButton(1))
         {
-            Rigidbody.AddForce(transform.up * Force);
+            rb.AddForce(transform.up * Force);
             //transform.Translate(Vector3.up * moveSpeed * Time.deltaTime);
         }
-        // Max sebesség
-        if (Rigidbody.velocity.magnitude > MaxSpeed)
-        {
-            Rigidbody.velocity = Vector2.ClampMagnitude(Rigidbody.velocity, MaxSpeed);
-        }
         //sebesség csökkenés
-        Rigidbody.velocity = Rigidbody.velocity * Lasulas;
+        rb.velocity = rb.velocity * Lasulas;
+        // Max sebesség
+        if (rb.velocity.magnitude > MaxSpeed)
+        {
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, MaxSpeed);
+        }
+        
     }
 }
