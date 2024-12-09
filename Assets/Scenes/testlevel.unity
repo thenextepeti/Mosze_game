@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidPrefab: {fileID: 7210606180227078108, guid: 0ce493ec4d806234e9634d6711f8bf00, type: 3}
-  asteroidCount: 50
+  asteroidCount: 80
   background: {fileID: 576070654}
 --- !u!4 &280951946
 Transform:
@@ -410,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 2242497746095071302, guid: a685147d237facb4997c1aa1afc32241, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1892731977}
+      objectReference: {fileID: 1614232832}
     - target: {fileID: 2242497746095071302, guid: a685147d237facb4997c1aa1afc32241, type: 3}
       propertyPath: shootingDistance
       value: 30
@@ -468,11 +468,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1540539387863311540, guid: a3f0644eb6034234e889272bb924a894, type: 3}
   m_PrefabInstance: {fileID: 1273358112}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1892731977 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5860450853956049928, guid: a685147d237facb4997c1aa1afc32241, type: 3}
-  m_PrefabInstance: {fileID: 1505276394}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
