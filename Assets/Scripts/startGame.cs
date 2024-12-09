@@ -7,7 +7,7 @@ public class startGame : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("mosze_game_mozog"); 
+        SceneManager.LoadScene("testlevel"); 
     }
 
     public void QuitGame()
