@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2544137858899901903, guid: d517ea5f102b11f49921f9a6a0e22f14, type: 3}
+      propertyPath: orthographic size
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4045188034606420059, guid: d517ea5f102b11f49921f9a6a0e22f14, type: 3}
       propertyPath: target
       value: 
