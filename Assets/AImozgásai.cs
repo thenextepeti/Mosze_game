@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class AImozgásai : MonoBehaviour
 {
-    public float Force = 15; // Az ellenséges űrhajó gyorsulása
-    public float MaxSpeed = 20;
+    public float Force = 15f; // Az ellenséges űrhajó gyorsulása
+    public float MaxSpeed = 20f;
     public float Lasulas = 0.99f;
+    public float Forgás = 30f;
+
     private Rigidbody2D rb;
 
     void Start()
@@ -15,13 +17,15 @@ public class AImozgásai : MonoBehaviour
     }
 
     // Az ellenség mozgása egy célpont felé
-    public void MoveToTarget(Vector2 targetPosition)
+    public void MoveToTarget(Transform target)
     {
         // Az irány, amerre az ellenségnek mennie kell
-        Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
+        Vector2 direction = (target.position - transform.position).normalized;
+        float rotationSteer = Vector3.Cross(transform.up, direction).z;
+        rb.angularVelocity = rotationSteer * Forgás * 5f;
 
-        // Az ellenséges űrhajó mozgása a célpont felé
-        rb.AddForce(direction * Force);
+        // Az ellenséges űrhajó mozgása a előre
+        rb.AddForce(transform.up * Force);
 
         //sebesség csökkenés
         rb.velocity = rb.velocity * Lasulas;

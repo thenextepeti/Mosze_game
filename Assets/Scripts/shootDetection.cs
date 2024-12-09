@@ -12,7 +12,7 @@ public class shootDetection : MonoBehaviour
         // Ellenõrizzük, hogy a találkozó objektum a lövedék-e
         if (other.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("Aszteroida találatot kapott!");
+            Debug.Log(gameObject.name + " találatot kapott!");
 
             // Életerõ csökkentése
             health--;
@@ -30,7 +30,7 @@ public class shootDetection : MonoBehaviour
 
     private void Explode()
     {
-        Debug.Log("Aszteroida megsemmisült!");
+        Debug.Log( gameObject.name + " megsemmisült!");
 
         // Robbanás effekt létrehozása
         if (explosionEffect != null)

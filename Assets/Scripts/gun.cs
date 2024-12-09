@@ -21,7 +21,6 @@ public class Gun : MonoBehaviour
     {
         // Create bullet at firePoint position and rotation
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
         // Set the bullet velocity
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.up * bulletSpeed;
