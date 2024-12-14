@@ -10,10 +10,5 @@ public class startGame : MonoBehaviour
         SceneManager.LoadScene("testlevel"); 
     }
 
-    public void QuitGame()
-    {
-        Application.Quit(); 
-        Debug.Log("Kilépés a játékból."); 
-    }
-
+   
 }
