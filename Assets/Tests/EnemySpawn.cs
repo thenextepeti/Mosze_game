@@ -5,16 +5,13 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject enemyPrefab; // Az ellenség prefabja
-    // 1: A játékos camerán kívûl egy körgyürûben
     public float spawnMinDistance = 30f; // Minimum távolság a kamerától
     public float spawnMaxDistance = 45f; // Maximum távolság a kamerától
-
     public Camera center;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,7 +23,7 @@ public class EnemySpawn : MonoBehaviour
         }
     }
 
-    void SpawnEnemyinCirce()
+    public void SpawnEnemyinCirce() // Change to public
     {
         // Véletlenszerû szög a teljes 360 fokból
         float randomAngle = Random.Range(0f, 360f);
