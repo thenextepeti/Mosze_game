@@ -1,43 +1,95 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public Transform spawnPoint;    // Hol spawnoljanak az ellenségek
     public int enemiesPerWave = 5; // Ellenségek száma egy hullámban
-    public float timeBetweenWaves = 5f; // Idõ egy hullám között
-    private bool waveInProgress = false;
+    public int totalWaves = 5;// Összes hullám száma
+    public float timebetweenWaves = 30f; // Szünet két hullám között
+    public float WaveLengt = 20f;
 
-    private EnemySpawn Spawner;
+    private int currentWave = 0; // Jelenlegi hullám száma
+    public int activeEnemies = 1; //testpályán egy
 
     void Start()
     {
-        Thread.Sleep(1000);
-        Spawner = GetComponent<EnemySpawn>();
-        StartCoroutine(SpawnWave()); // Az elsõ hullám indítása
+        StartCoroutine(WavesStart());
     }
-
-    IEnumerator SpawnWave()
+    IEnumerator WavesStart()
     {
-        while (true)
         {
-            if (!waveInProgress)
+            while (currentWave < totalWaves)
             {
-                waveInProgress = true;
+                // Indítsd el a hullámot
+                yield return StartCoroutine(SpawnWave());
 
-                // Ellenségek generálása a hullámhoz
-                for (int i = 0; i < enemiesPerWave; i++)
+                // Várd meg, amíg az összes ellenség elpusztul
+                while (activeEnemies > 0)
                 {
-                    Spawner.SpawnEnemyinCirce();
-                    yield return new WaitForSeconds(1f); // Idõzítés az egyes ellenségek között
+                    yield return null; // Várj egy frame-et
                 }
 
-                waveInProgress = false;
-                yield return new WaitForSeconds(timeBetweenWaves); // Várakozás a következõ hullám elõtt
+                Debug.Log($"Hullám {currentWave + 1} véget ért!");
+
+                // 20 másodperc szünet a következõ hullám elõtt
+                yield return new WaitForSeconds(timebetweenWaves);
+
+                currentWave++;
             }
-            yield return null;
+
+            Debug.Log("Az összes hullám befejezõdött!");
         }
+    }
+
+    private IEnumerator SpawnWave()
+    {
+        Debug.Log($"Hullám {currentWave + 1} elkezdõdött!");
+        for (int i = 0; i < enemiesPerWave; i++)
+        {
+            // Ellenség spawnolása
+            SpawnEnemyinCirce();
+            activeEnemies++;
+
+            yield return new WaitForSeconds(1f); // Késleltetés az ellenségek között
+        }
+    }
+
+    public void activeEnemyDeath()
+    {
+        activeEnemies--;
+        Debug.Log($"Kill confirmed!");
+    }
+
+
+    //Spanw enemy in circle átalakítva a Wave-hez
+
+    public GameObject enemyPrefab; // Az ellenség prefabja
+    // 1: A játékos camerán kívûl egy körgyürûben
+    public float spawnMinDistance = 50f; // Minimum távolság a kamerától
+    public float spawnMaxDistance = 60f; // Maximum távolság a kamerától
+    public Transform center;
+
+    public void SpawnEnemyinCirce()
+    {
+        // Véletlenszerû szög a teljes 360 fokból
+        float randomAngle = Random.Range(0f, 360f);
+
+        // Véletlenszerû távolság a megadott tartományban
+        float randomDistance = Random.Range(spawnMinDistance, spawnMaxDistance);
+
+        // Kiszámoljuk a spawn pozíciót a szög és távolság alapján
+        Vector3 spawnPosition = new Vector2(
+            center.transform.position.x + Mathf.Cos(randomAngle * Mathf.Deg2Rad) * randomDistance,
+            center.transform.position.y + Mathf.Sin(randomAngle * Mathf.Deg2Rad) * randomDistance
+        );
+
+        // Ellenség létrehozása a generált pozícióban
+        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }
 }
 
+
+    

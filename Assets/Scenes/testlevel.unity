@@ -132,10 +132,10 @@ GameObject:
   m_Component:
   - component: {fileID: 280951946}
   - component: {fileID: 280951945}
-  - component: {fileID: 280951947}
+  - component: {fileID: 280951948}
   m_Layer: 0
   m_Name: game_controller
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &280951947
+--- !u!114 &280951948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -179,18 +179,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 280951944}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1273eb9dc2db9d4ab96153e0f622a23, type: 3}
+  m_Script: {fileID: 11500000, guid: 77827a67570c7fc49be8f56ecbf09e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesPerWave: 5
+  totalWaves: 5
+  timebetweenWaves: 30
+  WaveLengt: 20
+  activeEnemies: 1
   enemyPrefab: {fileID: 2822854687298782902, guid: a685147d237facb4997c1aa1afc32241, type: 3}
   spawnMinDistance: 50
   spawnMaxDistance: 60
-  center: {fileID: 336683461}
---- !u!20 &336683461 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 2544137858899901903, guid: d517ea5f102b11f49921f9a6a0e22f14, type: 3}
-  m_PrefabInstance: {fileID: 1475911951}
-  m_PrefabAsset: {fileID: 0}
+  center: {fileID: 1614232832}
 --- !u!1001 &443430741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8979697729642642763, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+      propertyPath: EnemyDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 280951948}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
