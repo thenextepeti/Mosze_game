@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public Transform player; // A játékos referencia
-    private AImozgásai mozgások; // Az ellenséges ûrhajó mozgásának scriptje
+    public AImozgásai mozgások; // Az ellenséges ûrhajó mozgásának scriptje
     public float shootingDistance = 5f; // A távolság, amikor az ellenség elkezdi lõni a játékost
     // Start is called before the first frame update
     void Start()

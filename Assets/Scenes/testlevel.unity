@@ -155,6 +155,21 @@ MonoBehaviour:
   asteroidPrefab: {fileID: 7210606180227078108, guid: 0ce493ec4d806234e9634d6711f8bf00, type: 3}
   asteroidCount: 50
   background: {fileID: 576070654}
+  GenReady:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 280951948}
+        m_TargetAssemblyTypeName: WaveManager, Assembly-CSharp
+        m_MethodName: Startwave
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &280951946
 Transform:
   m_ObjectHideFlags: 0
@@ -463,6 +478,14 @@ PrefabInstance:
       propertyPath: EnemyDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 280951948}
+    - target: {fileID: 8979697729642642763, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+      propertyPath: EnemyDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979697729642642763, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+      propertyPath: EnemyDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

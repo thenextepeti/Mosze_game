@@ -14,7 +14,11 @@ public class WaveManager : MonoBehaviour
     private int currentWave = 0; // Jelenlegi hullám száma
     public int activeEnemies = 1; //testpályán egy
 
-    void Start()
+    /* void Start()
+     {
+         StartCoroutine(WavesStart());
+     }*/
+    public void Startwave()
     {
         StartCoroutine(WavesStart());
     }
