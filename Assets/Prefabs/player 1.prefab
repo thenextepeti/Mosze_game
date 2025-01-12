@@ -146,7 +146,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7542079746814096266, guid: 442b2888064569c44a60e765c754d29c, type: 3}
   firePoint: {fileID: 1454348857656138170}
   bulletSpeed: 50
-  playerDamage: 10
 --- !u!60 &3870718998187285115
 PolygonCollider2D:
   m_ObjectHideFlags: 0
