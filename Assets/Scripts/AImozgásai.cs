@@ -11,9 +11,7 @@ public class AImozgásai : MonoBehaviour
 
     private Rigidbody2D rb;
 
-
-    void Awake()
-
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }

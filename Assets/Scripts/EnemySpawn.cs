@@ -4,39 +4,43 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Az ellensÃ©g prefabja
-    // 1: A jÃ¡tÃ©kos camerÃ¡n kÃ­vÃ»l egy kÃ¶rgyÃ¼rÃ»ben
-    public float spawnMinDistance = 30f; // Minimum tÃ¡volsÃ¡g a kamerÃ¡tÃ³l
-    public float spawnMaxDistance = 45f; // Maximum tÃ¡volsÃ¡g a kamerÃ¡tÃ³l
+    public GameObject enemyPrefab; // Az ellenség prefabja
+    // 1: A játékos camerán kívûl egy körgyürûben
+    public float spawnMinDistance = 30f; // Minimum távolság a kamerától
+    public float spawnMaxDistance = 45f; // Maximum távolság a kamerától
 
     public Camera center;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time % 4f == 0)  // PÃ©ldÃ¡ul minden 2 mÃ¡sodpercben
+        if (Time.time % 2f == 0)  // Például minden 2 másodpercben
         {
             SpawnEnemyinCirce();
         }
     }
 
-    public void SpawnEnemyinCirce()
-
+    void SpawnEnemyinCirce()
     {
-        // VÃ©letlenszerÃ» szÃ¶g a teljes 360 fokbÃ³l
+        // Véletlenszerû szög a teljes 360 fokból
         float randomAngle = Random.Range(0f, 360f);
 
-        // VÃ©letlenszerÃ» tÃ¡volsÃ¡g a megadott tartomÃ¡nyban
+        // Véletlenszerû távolság a megadott tartományban
         float randomDistance = Random.Range(spawnMinDistance, spawnMaxDistance);
 
-        // KiszÃ¡moljuk a spawn pozÃ­ciÃ³t a szÃ¶g Ã©s tÃ¡volsÃ¡g alapjÃ¡n
+        // Kiszámoljuk a spawn pozíciót a szög és távolság alapján
         Vector3 spawnPosition = new Vector2(
             center.transform.position.x + Mathf.Cos(randomAngle * Mathf.Deg2Rad) * randomDistance,
             center.transform.position.y + Mathf.Sin(randomAngle * Mathf.Deg2Rad) * randomDistance
         );
 
-        // EllensÃ©g lÃ©trehozÃ¡sa a generÃ¡lt pozÃ­ciÃ³ban
+        // Ellenség létrehozása a generált pozícióban
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }
 }
