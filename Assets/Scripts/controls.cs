@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startGame : MonoBehaviour
+public class controls : MonoBehaviour
 {
-    public void StartGame()
+    public void LoadControlsScene()
     {
-        SceneManager.LoadScene("testlevel"); 
+        SceneManager.LoadScene("Controls");
     }
-
-   
 }

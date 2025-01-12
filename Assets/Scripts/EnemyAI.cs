@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public Transform player; // A j·tÈkos referencia
-    public AImozg·sai mozg·sok; // Az ellensÈges ˚rhajÛ mozg·s·nak scriptje
-    public float shootingDistance = 5f; // A t·vols·g, amikor az ellensÈg elkezdi lıni a j·tÈkost
+    public Transform player; // A j√°t√©kos referencia
+    public AImozg√°sai mozg√°sok; // Az ellens√©ges √ªrhaj√≥ mozg√°s√°nak scriptje
+    public float shootingDistance = 5f; // A t√°vols√°g, amikor az ellens√©g elkezdi l√µni a j√°t√©kost
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
-        mozg·sok = GetComponent<AImozg·sai>();
+        mozg√°sok = GetComponent<AImozg√°sai>();
 
     }
 
@@ -41,9 +41,9 @@ public class EnemyAI : MonoBehaviour
 
     void MoweTowradsPlayer()
     {
-        if (mozg·sok != null)
+        if (mozg√°sok != null)
         {
-            mozg·sok.MoveToTarget(player.transform);
+            mozg√°sok.MoveToTarget(player.transform);
         }
     }
 
@@ -58,7 +58,7 @@ public class EnemyAI : MonoBehaviour
         
         // Create bullet at firePoint position and rotation
         GameObject Bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Bullet.GetComponent<EnemyBullet>().shooter = gameObject; // A kilˆvı gameObject lesz a lˆvedÈk "shooter"-e
+        Bullet.GetComponent<EnemyBullet>().shooter = gameObject; // A kil√∂v√µ gameObject lesz a l√∂ved√©k "shooter"-e
         // Set the bullet velocity
         Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.up* bulletSpeed;

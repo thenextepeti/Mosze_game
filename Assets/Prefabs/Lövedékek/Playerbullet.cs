@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
+    public int damage = 1; // Amount of damage the bullet deals
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Ha az ütközõ objektum tag-je "Shooter", akkor nem töröljük a golyót
+        // Ignore collision with the player
         if (collision.gameObject.CompareTag("Player"))
         {
-            return; // Nem történik semmi, ha a kilövõ objektummal ütközik
+            return;
         }
 
-        // Megsemmisítjük a golyót, ha ütközik valamivel, ami nem a kilövõ objektum
+        // Check if the object has a health system
+        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            // Apply damage to the enemy
+            enemyHealth.TakeDamage(damage);
+        }
+
+        // Destroy the bullet after impact
         Destroy(gameObject);
     }
 }

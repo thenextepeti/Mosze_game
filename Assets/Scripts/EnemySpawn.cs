@@ -4,37 +4,39 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject enemyPrefab; // Az ellenség prefabja
-    // 1: A játékos camerán kívûl egy körgyürûben
-    public float spawnMinDistance = 30f; // Minimum távolság a kamerától
-    public float spawnMaxDistance = 45f; // Maximum távolság a kamerától
+    public GameObject enemyPrefab; // Az ellensÃ©g prefabja
+    // 1: A jÃ¡tÃ©kos camerÃ¡n kÃ­vÃ»l egy kÃ¶rgyÃ¼rÃ»ben
+    public float spawnMinDistance = 30f; // Minimum tÃ¡volsÃ¡g a kamerÃ¡tÃ³l
+    public float spawnMaxDistance = 45f; // Maximum tÃ¡volsÃ¡g a kamerÃ¡tÃ³l
 
     public Camera center;
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time % 4f == 0)  // Például minden 2 másodpercben
+        if (Time.time % 4f == 0)  // PÃ©ldÃ¡ul minden 2 mÃ¡sodpercben
         {
             SpawnEnemyinCirce();
         }
     }
 
     public void SpawnEnemyinCirce()
+
     {
-        // Véletlenszerû szög a teljes 360 fokból
+        // VÃ©letlenszerÃ» szÃ¶g a teljes 360 fokbÃ³l
         float randomAngle = Random.Range(0f, 360f);
 
-        // Véletlenszerû távolság a megadott tartományban
+        // VÃ©letlenszerÃ» tÃ¡volsÃ¡g a megadott tartomÃ¡nyban
         float randomDistance = Random.Range(spawnMinDistance, spawnMaxDistance);
 
-        // Kiszámoljuk a spawn pozíciót a szög és távolság alapján
+        // KiszÃ¡moljuk a spawn pozÃ­ciÃ³t a szÃ¶g Ã©s tÃ¡volsÃ¡g alapjÃ¡n
         Vector3 spawnPosition = new Vector2(
             center.transform.position.x + Mathf.Cos(randomAngle * Mathf.Deg2Rad) * randomDistance,
             center.transform.position.y + Mathf.Sin(randomAngle * Mathf.Deg2Rad) * randomDistance
         );
 
-        // Ellenség létrehozása a generált pozícióban
+        // EllensÃ©g lÃ©trehozÃ¡sa a generÃ¡lt pozÃ­ciÃ³ban
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
     }
 }
