@@ -9,6 +9,7 @@ public class WaveManager : MonoBehaviour
     public int enemiesPerWave = 5; // Ellenségek száma egy hullámban
     public int totalWaves = 5;// Összes hullám száma
     public float timebetweenWaves = 30f; // Szünet két hullám között
+    public float remainingTime = 0; // Szünet két hullám között
     public float WaveLengt = 20f;
 
     public int currentWave = 0; // Jelenlegi hullám száma
@@ -39,7 +40,13 @@ public class WaveManager : MonoBehaviour
                 Debug.Log($"Hullám {currentWave + 1} véget ért!");
                 Debug.Log($"Következõ Hullám {timebetweenWaves}s múlva kezdõdik !");
                 // 20 másodperc szünet a következõ hullám elõtt
-                yield return new WaitForSeconds(timebetweenWaves);
+                //yield return new WaitForSeconds(timebetweenWaves);
+                remainingTime = timebetweenWaves;
+                while (remainingTime > 0)
+                {
+                    remainingTime -= Time.deltaTime; // Idõ csökkentése
+                    yield return null; // Vár egy frame-et
+                }
 
                 currentWave++;
             }

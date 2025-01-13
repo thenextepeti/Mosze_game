@@ -25,50 +25,17 @@ public class WaveManagerUI : MonoBehaviour
         if (waveManager != null)
         {
             // Frissítsd a szövegeket
-            waveText.text = "Wave: " + waveManager.currentWave;
+            waveText.text = "Wave: " + waveManager.currentWave+1;
             enemyCountText.text = "Enemies: " + waveManager.activeEnemies;
-            timeUntilNextWaveText.text = "Next Wave In: " + Mathf.CeilToInt(waveManager.timebetweenWaves) + "s";
-        }
-    }
-
-    /*void Update()
-    {
-        timeRemaining -= Time.deltaTime;
-
-        if (timeRemaining <= 0)
-        {
-            if (szünet)
+            if (waveManager.remainingTime > 0)
             {
-                timeRemaining = waveTime;
-                UpdateWaveInfo();
-                szünet = false;
+                timeUntilNextWaveText.text = "Next Wave In: " + Mathf.CeilToInt(waveManager.remainingTime) + "s";
             }
             else
             {
-                currentWave++;
-                timeRemaining = pauseTime;
-                UpdateWaveInfo();
-                szünet = true;
+                timeUntilNextWaveText.text = "Wave In Progress!";
             }
+            
         }
-        UpdateTimer();
     }
-
-    void UpdateWaveInfo()
-    {
-        waveText.text = "Wave: " + currentWave.ToString();
-    }
-
-    void UpdateTimer()
-    {
-        if (szünet)
-        {
-            timerText.text = "Time until next Wave: " + Mathf.Ceil(timeRemaining).ToString() + "s";
-        }
-        else 
-        {
-            timerText.text = "Time Remaining: " + Mathf.Ceil(timeRemaining).ToString() + "s";
-        }
-
-    }*/
 }
