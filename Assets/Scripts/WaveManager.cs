@@ -37,7 +37,7 @@ public class WaveManager : MonoBehaviour
                 }
 
                 Debug.Log($"Hullám {currentWave + 1} véget ért!");
-
+                Debug.Log($"Következõ Hullám {timebetweenWaves}s múlva kezdõdik !");
                 // 20 másodperc szünet a következõ hullám elõtt
                 yield return new WaitForSeconds(timebetweenWaves);
 
