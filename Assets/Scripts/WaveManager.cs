@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
     public float timebetweenWaves = 30f; // Szünet két hullám között
     public float WaveLengt = 20f;
 
-    private int currentWave = 0; // Jelenlegi hullám száma
+    public int currentWave = 0; // Jelenlegi hullám száma
     public int activeEnemies = 1; //testpályán egy
 
     /* void Start()
