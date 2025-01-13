@@ -345,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesPerWave: 5
   totalWaves: 5
-  timebetweenWaves: 30
+  timebetweenWaves: 15
   WaveLengt: 20
   activeEnemies: 1
   enemyPrefab: {fileID: 2822854687298782902, guid: a685147d237facb4997c1aa1afc32241, type: 3}
@@ -927,6 +927,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860450853956049928, guid: a685147d237facb4997c1aa1afc32241, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8168962502003165519, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8979697729642642763, guid: a685147d237facb4997c1aa1afc32241, type: 3}
