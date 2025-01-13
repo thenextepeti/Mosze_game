@@ -2,26 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class WaveManagerUI : MonoBehaviour
 {
-    public TextMeshProUGUI waveText;
-    public TextMeshProUGUI timerText;  // Második UI Text, ami az idõt mutatja
-    private int currentWave = 1;
-    public float waveTime = 10f;  // Minden wave 10 másodpercig tart
-    public float pauseTime = 10f;
-    private float timeRemaining;
-    private int Enemiescount;
-    private int remainingEnemies;
-    bool szünet;
-    void Start()
+    public TMP_Text waveText; // A hullám számának szövege
+    public TMP_Text enemyCountText; // Az ellenségek számának szövege
+    public TMP_Text timeUntilNextWaveText; // A következõ hullámig hátralévõ idõ szövege
+
+    public WaveManager waveManager; // A hullámkezelõ referencia
+
+    void Awake()
     {
-        timeRemaining = pauseTime;
-        UpdateWaveInfo();
-        szünet = true;
+        if (waveManager == null)
+        {
+            Debug.LogError("WaveManager nincs hozzárendelve a WaveManagerUI-hoz!");
+        }
     }
 
     void Update()
+    {
+        if (waveManager != null)
+        {
+            // Frissítsd a szövegeket
+            waveText.text = "Wave: " + waveManager.currentWave;
+            enemyCountText.text = "Enemies: " + waveManager.activeEnemies;
+            timeUntilNextWaveText.text = "Next Wave In: " + Mathf.CeilToInt(waveManager.timebetweenWaves) + "s";
+        }
+    }
+
+    /*void Update()
     {
         timeRemaining -= Time.deltaTime;
 
@@ -60,5 +70,5 @@ public class WaveManagerUI : MonoBehaviour
             timerText.text = "Time Remaining: " + Mathf.Ceil(timeRemaining).ToString() + "s";
         }
 
-    }
+    }*/
 }
