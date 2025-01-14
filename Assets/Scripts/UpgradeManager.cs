@@ -9,143 +9,179 @@ public class UpgradeManager : MonoBehaviour
     public TMP_Text maxHPText;
     public Slider maxHPSlider;
     public Button upgradeMaxHPButton;
+    public TMP_Text maxHPCostText;
 
     public TMP_Text hpRegenText;
     public Slider hpRegenSlider;
     public Button upgradeHPRegenButton;
+    public TMP_Text hpRegenCostText;
 
     public TMP_Text maxEnergyText;
     public Slider maxEnergySlider;
     public Button upgradeMaxEnergyButton;
+    public TMP_Text maxEnergyCostText;
 
     public TMP_Text energyRegenText;
     public Slider energyRegenSlider;
     public Button upgradeEnergyRegenButton;
+    public TMP_Text energyRegenCostText;
 
     public TMP_Text damageText;
     public Slider damageSlider;
     public Button upgradeDamageButton;
+    public TMP_Text damageCostText;
 
     public TMP_Text attackSpeedText;
     public Slider attackSpeedSlider;
     public Button upgradeAttackSpeedButton;
+    public TMP_Text attackSpeedCostText;
 
+    public TMP_Text resourceText;
 
+    private int maxHPUpgradeCost = 5;
+    private int hpRegenUpgradeCost = 5;
+    private int maxEnergyUpgradeCost = 5;
+    private int energyRegenUpgradeCost = 5;
+    private int damageUpgradeCost = 5;
+    private int attackSpeedUpgradeCost = 5;
 
-    public int upgradeCost = 50; // Példa költség
-    private int playerCurrency = 500; // Példa kezdõ pénz
+    private int playerCurrency = 0; // Kezdetben 0 erõforrás
 
     void Start()
     {
         UpdateUI();
     }
 
+    public void AddResources(int amount)
+    {
+        playerCurrency += amount;
+        Debug.Log($"Added Resources: {amount}. New Total: {playerCurrency}");  // Debug üzenet
+        UpdateUI();  // UI frissítése az új erõforrásokkal
+    }
+
     public void UpgradeMaxHP()
     {
-        if (playerStats.currentHPUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost)
+        Debug.Log($"Player Resources: {playerCurrency}"); // Debug üzenet a playerCurrency ellenõrzéséhez
+
+        if (playerStats.currentHPUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= maxHPUpgradeCost)
         {
-            playerCurrency -= upgradeCost;
-            playerStats.maxHP += 10; // Példa: +10 Max HP szintenként
+            playerCurrency -= maxHPUpgradeCost;
+            playerStats.maxHP += 10;
             playerStats.currentHPUpgradeLevel++;
+            maxHPUpgradeCost += 5;
             UpdateUI();
         }
     }
 
     public void UpgradeHPRegen()
     {
-        if (playerStats.currentRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost)
+        Debug.Log($"Player Resources: {playerCurrency}"); // Debug üzenet
+
+        if (playerStats.currentRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= hpRegenUpgradeCost)
         {
-            playerCurrency -= upgradeCost;
-            playerStats.hpRegen += 0.5f; // Példa: +0.5 regen szintenként
+            playerCurrency -= hpRegenUpgradeCost;
+            playerStats.hpRegen += 0.5f;
             playerStats.currentRegenUpgradeLevel++;
+            hpRegenUpgradeCost += 5;
             UpdateUI();
         }
     }
 
     public void UpgradeMaxEnergy()
     {
-        if (playerStats.currentEnergyUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost)
+        Debug.Log($"Player Resources: {playerCurrency}"); // Debug üzenet
+
+        if (playerStats.currentEnergyUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= maxEnergyUpgradeCost)
         {
-            playerCurrency -= upgradeCost;
-            playerStats.maxEnergy += 10; // Példa: +10 max energia szintenként
+            playerCurrency -= maxEnergyUpgradeCost;
+            playerStats.maxEnergy += 10;
             playerStats.currentEnergyUpgradeLevel++;
+            maxEnergyUpgradeCost += 5;
             UpdateUI();
         }
     }
 
     public void UpgradeEnergyRegen()
     {
-        if (playerStats.currentEnergyRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost)
+        Debug.Log($"Player Resources: {playerCurrency}"); // Debug üzenet
+
+        if (playerStats.currentEnergyRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= energyRegenUpgradeCost)
         {
-            playerCurrency -= upgradeCost;
-            playerStats.energyRegen += 0.5f; // Példa: +0.5 energia regeneráció szintenként
+            playerCurrency -= energyRegenUpgradeCost;
+            playerStats.energyRegen += 0.5f;
             playerStats.currentEnergyRegenUpgradeLevel++;
+            energyRegenUpgradeCost += 5;
             UpdateUI();
         }
     }
 
     public void UpgradeDamage()
     {
-        if (playerStats.currentDamageUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost)
+        Debug.Log($"Player Resources: {playerCurrency}"); // Debug üzenet
+
+        if (playerStats.currentDamageUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= damageUpgradeCost)
         {
-            playerCurrency -= upgradeCost;
-            playerStats.damage += 5; // Példa: +5 damage szintenként
+            playerCurrency -= damageUpgradeCost;
+            playerStats.damage += 5;
             playerStats.currentDamageUpgradeLevel++;
+            damageUpgradeCost += 5;
             UpdateUI();
         }
     }
 
     public void UpgradeAttackSpeed()
     {
-        if (playerStats.currentAttackSpeedUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost)
+        Debug.Log($"Player Resources: {playerCurrency}"); // Debug üzenet
+
+        if (playerStats.currentAttackSpeedUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= attackSpeedUpgradeCost)
         {
-            playerCurrency -= upgradeCost;
-            playerStats.attackSpeed += 0.1f; // Példa: +0.1 attack speed szintenként
+            playerCurrency -= attackSpeedUpgradeCost;
+            playerStats.attackSpeed += 0.1f;
             playerStats.currentAttackSpeedUpgradeLevel++;
+            attackSpeedUpgradeCost += 5;
             UpdateUI();
         }
     }
 
-
     void UpdateUI()
     {
-        // Max HP szöveg és sáv frissítése
+        // Frissítjük az erõforrások kijelzését
+        resourceText.text = $"Resources: {playerCurrency}";
+
         maxHPText.text = $"Max HP: {playerStats.maxHP} (Level {playerStats.currentHPUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         maxHPSlider.value = playerStats.currentHPUpgradeLevel;
         maxHPSlider.maxValue = playerStats.maxUpgradeLevel;
+        maxHPCostText.text = $"Cost: {maxHPUpgradeCost}";
+        upgradeMaxHPButton.interactable = playerCurrency >= maxHPUpgradeCost;
 
-        // Gomb inaktív, ha a fejlesztés elérte a maximumot
-        upgradeMaxHPButton.interactable = playerStats.currentHPUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost;
-
-        // HP Regen
         hpRegenText.text = $"HP Regen: {playerStats.hpRegen} (Level {playerStats.currentRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         hpRegenSlider.value = playerStats.currentRegenUpgradeLevel;
         hpRegenSlider.maxValue = playerStats.maxUpgradeLevel;
-        upgradeHPRegenButton.interactable = playerStats.currentRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost;
+        hpRegenCostText.text = $"Cost: {hpRegenUpgradeCost}";
+        upgradeHPRegenButton.interactable = playerCurrency >= hpRegenUpgradeCost;
 
-        // Max Energy
         maxEnergyText.text = $"Max Energy: {playerStats.maxEnergy} (Level {playerStats.currentEnergyUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         maxEnergySlider.value = playerStats.currentEnergyUpgradeLevel;
         maxEnergySlider.maxValue = playerStats.maxUpgradeLevel;
-        upgradeMaxEnergyButton.interactable = playerStats.currentEnergyUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost;
+        maxEnergyCostText.text = $"Cost: {maxEnergyUpgradeCost}";
+        upgradeMaxEnergyButton.interactable = playerCurrency >= maxEnergyUpgradeCost;
 
-        // Energy Regen
         energyRegenText.text = $"Energy Regen: {playerStats.energyRegen} (Level {playerStats.currentEnergyRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         energyRegenSlider.value = playerStats.currentEnergyRegenUpgradeLevel;
         energyRegenSlider.maxValue = playerStats.maxUpgradeLevel;
-        upgradeEnergyRegenButton.interactable = playerStats.currentEnergyRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost;
+        energyRegenCostText.text = $"Cost: {energyRegenUpgradeCost}";
+        upgradeEnergyRegenButton.interactable = playerCurrency >= energyRegenUpgradeCost;
 
-        // Damage
         damageText.text = $"Damage: {playerStats.damage} (Level {playerStats.currentDamageUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         damageSlider.value = playerStats.currentDamageUpgradeLevel;
         damageSlider.maxValue = playerStats.maxUpgradeLevel;
-        upgradeDamageButton.interactable = playerStats.currentDamageUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost;
+        damageCostText.text = $"Cost: {damageUpgradeCost}";
+        upgradeDamageButton.interactable = playerCurrency >= damageUpgradeCost;
 
-        // Attack Speed
         attackSpeedText.text = $"Attack Speed: {playerStats.attackSpeed} (Level {playerStats.currentAttackSpeedUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         attackSpeedSlider.value = playerStats.currentAttackSpeedUpgradeLevel;
         attackSpeedSlider.maxValue = playerStats.maxUpgradeLevel;
-        upgradeAttackSpeedButton.interactable = playerStats.currentAttackSpeedUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= upgradeCost;
+        attackSpeedCostText.text = $"Cost: {attackSpeedUpgradeCost}";
+        upgradeAttackSpeedButton.interactable = playerCurrency >= attackSpeedUpgradeCost;
     }
 }
-
