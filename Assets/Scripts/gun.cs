@@ -8,7 +8,12 @@ public class Gun : MonoBehaviour
     public Transform firePoint;          // The point where bullets are fired from
     public float bulletSpeed = 10f;      // Speed of the bullet
     public int playerDamage = 5;         // Amount of damage the player does
-
+    public AudioClip shootsound; // A hangfájl
+    private AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
         // Fire on left mouse button or space bar press
@@ -26,6 +31,8 @@ public class Gun : MonoBehaviour
         // Set the bullet velocity
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.up * bulletSpeed;
+        //play shoot sound
+        Playshootsound();
 
         // Pass the player's damage value to the bullet
         PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet>();
@@ -36,5 +43,10 @@ public class Gun : MonoBehaviour
 
         // Optional: Destroy the bullet after a certain time to avoid clutter
         Destroy(bullet, 2f);
+    }
+
+    public void Playshootsound()
+    {
+        audioSource.PlayOneShot(shootsound);
     }
 }

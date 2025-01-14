@@ -25,7 +25,7 @@ public class WaveManagerUI : MonoBehaviour
         if (waveManager != null)
         {
             // Frissítsd a szövegeket
-            waveText.text = "Wave: " + waveManager.currentWave+1;
+            waveText.text = "Wave: " + waveManager.currentWave;
             enemyCountText.text = "Enemies: " + waveManager.activeEnemies;
             if (waveManager.remainingTime > 0)
             {
