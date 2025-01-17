@@ -44,7 +44,7 @@ public class Aszteorida_gen : MonoBehaviour
 
     void Ready()
     {
-        GenReady.Invoke();
+        GenReady?.Invoke();
     }
 
 }
