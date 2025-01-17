@@ -15,13 +15,14 @@ public class PlayerBullet : MonoBehaviour
         }
 
         // Check if the object has a health system
-        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
+        
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            Enemyship Enemyship = collision.gameObject.GetComponent<Enemyship>();
             // Apply damage to the enemy
-            enemyHealth.TakeDamage(damage);
+            Enemyship.TakeDamage(damage);
         }
-
+        
         // Destroy the bullet after impact
         Destroy(gameObject);
     }
