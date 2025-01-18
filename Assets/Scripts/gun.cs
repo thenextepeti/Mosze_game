@@ -7,10 +7,15 @@ public class Gun : MonoBehaviour
     private EnergyBar energyBar;
     public GameObject bulletPrefab;      // Reference to the bullet prefab
     public Transform firePoint;          // The point where bullets are fired from
-    public float bulletSpeed = 10f;      // Speed of the bullet
+    public float bulletSpeed = 50;      // Speed of the bullet
     public int playerDamage = 5;         // Amount of damage the player does
     public AudioClip shootsound; // A hangfájl
     private AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
         energyBar = GetComponent<EnergyBar>();
@@ -59,6 +64,6 @@ public class Gun : MonoBehaviour
 
     public void Playshootsound()
     {
-        //audioSource.PlayOneShot(shootsound);
+        audioSource.PlayOneShot(shootsound);
     }
 }
