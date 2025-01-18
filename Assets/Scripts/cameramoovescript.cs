@@ -26,13 +26,14 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        float clampedX = Mathf.Clamp(target.position.x, minX, maxX);
+        if (target != null) 
+        {
+            float clampedX = Mathf.Clamp(target.position.x, minX, maxX);
+            float clampedY = Mathf.Clamp(target.position.y, minY, maxY);
 
-        float clampedY = Mathf.Clamp(target.position.y, minY, maxY);
-
-
-        Vector3 targetPosition = new Vector3(clampedX, clampedY, -10f);
-        transform.position = targetPosition;
+            Vector3 targetPosition = new Vector3(clampedX, clampedY, -10f);
+            transform.position = targetPosition;
+        }
     }
 }
 

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Aszteorida_gen : MonoBehaviour
 {
     public GameObject asteroidPrefab; // Az aszteroida prefab
     public int asteroidCount = 50; // Az aszteroidák száma, amit a pályán akarunk elhelyezni
     public SpriteRenderer background;
+
+    public UnityEvent GenReady;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,7 @@ public class Aszteorida_gen : MonoBehaviour
         Vector2 spawnAreaMin = new Vector2(background.transform.position.x - backgroundWidth / 2, background.transform.position.y - backgroundHeight / 2);
         Vector2 spawnAreaMax = new Vector2(background.transform.position.x + backgroundWidth / 2, background.transform.position.y + backgroundHeight / 2);
         SpawnAsteorids(spawnAreaMin, spawnAreaMax);
+        Ready();
     }
 
     void SpawnAsteorids(Vector2 min, Vector2 max)
@@ -33,8 +37,14 @@ public class Aszteorida_gen : MonoBehaviour
             Instantiate(asteroidPrefab, spawnPosition, Quaternion.identity);
         }
     }
+    //public GameObject[] asteroidPrefabs; // Több aszteroida prefab
+    //Véletlenszerû aszteroida prefab választása
+    //int randomIndex = Random.Range(0, asteroidPrefabs.Length); // Véletlenszerû index választása
+    //GameObject chosenAsteroidPrefab = asteroidPrefabs[randomIndex]; // Kiválasztott prefab
+
+    void Ready()
+    {
+        GenReady?.Invoke();
+    }
+
 }
-//public GameObject[] asteroidPrefabs; // Több aszteroida prefab
-//Véletlenszerû aszteroida prefab választása
-//int randomIndex = Random.Range(0, asteroidPrefabs.Length); // Véletlenszerû index választása
-//GameObject chosenAsteroidPrefab = asteroidPrefabs[randomIndex]; // Kiválasztott prefab
