@@ -194,6 +194,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce75fedb194252f4f8ffe925b7d7b5d8, type: 3}
+--- !u!114 &171551195 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5509476796090118049, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &336683461 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2544137858899901903, guid: d517ea5f102b11f49921f9a6a0e22f14, type: 3}
@@ -264,6 +275,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdc983a36955ad1489eaf08ba9ec0730, type: 3}
+--- !u!114 &526156875 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 689935361513000141, guid: e40f46dea707547489c9f75474e4b627, type: 3}
+  m_PrefabInstance: {fileID: 1943904251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &576070654 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 223186128100735209, guid: cdc983a36955ad1489eaf08ba9ec0730, type: 3}
@@ -548,10 +570,22 @@ PrefabInstance:
       propertyPath: energyBarImage
       value: 
       objectReference: {fileID: 1611053297}
+    - target: {fileID: 2582215825701410256, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: increaseMaxEnergyButton
+      value: 
+      objectReference: {fileID: 1465551068}
+    - target: {fileID: 2582215825701410256, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: increaseEnergyRegenButton
+      value: 
+      objectReference: {fileID: 171551195}
     - target: {fileID: 4168208283306717262, guid: a3f0644eb6034234e889272bb924a894, type: 3}
       propertyPath: resourceText
       value: 
       objectReference: {fileID: 897926699}
+    - target: {fileID: 4168208283306717262, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: resourceImage
+      value: 
+      objectReference: {fileID: 526156875}
     - target: {fileID: 4168208283306717262, guid: a3f0644eb6034234e889272bb924a894, type: 3}
       propertyPath: upgradeManager
       value: 
@@ -589,6 +623,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 927f4527f1d497849bcd34eab5cfc240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1465551068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8735619058993863723, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1475911951

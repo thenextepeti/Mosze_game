@@ -11,6 +11,9 @@ public class Gun : MonoBehaviour
     public int playerDamage = 5;         // Amount of damage the player does
     public AudioClip shootsound; // A hangfájl
     private AudioSource audioSource;
+    // Buttons for upgrading playerDamage and bulletSpeed
+    public UnityEngine.UI.Button increaseDamageButton;
+    public UnityEngine.UI.Button increaseSpeedButton;
 
     private void Awake()
     {
@@ -22,6 +25,15 @@ public class Gun : MonoBehaviour
         if (energyBar == null)
         {
             Debug.LogError("EnergyBar script is missing from this GameObject!");
+        }
+        // Attach the upgrade button functions
+        if (increaseDamageButton)
+        {
+            increaseDamageButton.onClick.AddListener(IncreasePlayerDamage);
+        }
+        if (increaseSpeedButton)
+        {
+            increaseSpeedButton.onClick.AddListener(IncreaseBulletSpeed);
         }
     }
     void Update()
@@ -61,9 +73,18 @@ public class Gun : MonoBehaviour
         // Optional: Destroy the bullet after a certain time to avoid clutter
         Destroy(bullet, 2f);
     }
-
     public void Playshootsound()
     {
         audioSource.PlayOneShot(shootsound);
     }
+    private void IncreasePlayerDamage()
+    {
+        playerDamage = Mathf.RoundToInt(playerDamage * 1.1f); // Increase damage by 10%
+        Debug.Log($"Player Damage increased to: {playerDamage}");
+    }// Method to increase player damage by 10%
+    private void IncreaseBulletSpeed()
+    {
+        bulletSpeed *= 1.1f; // Increase bullet speed by 10%
+        Debug.Log($"Bullet Speed increased to: {bulletSpeed}");
+    }// Method to increase bullet speed by 10%
 }

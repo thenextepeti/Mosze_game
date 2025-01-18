@@ -22,7 +22,7 @@ public class PlayerInventory : MonoBehaviour
         // Add resources only if the current total doesn't exceed the max limit
         if (collectedResources < maxResources)
         {
-            collectedResources += 3;  // Fixed amount of 5 resources
+            collectedResources += 5;  // Fixed amount of 5 resources
 
             // Make sure not to exceed the max resources
             if (collectedResources > maxResources)
