@@ -9,6 +9,7 @@ public class Healthscript : MonoBehaviour
     public float maxHealth = 100f;    // Maximum health
     public float currentHealth;       // Current health
     public float collisionDamage = 10f; // Damage taken on collision
+    public float healthRegenRate = 2f;  // Percentage of max health regenerated per second
 
     void Start()
     {
@@ -19,6 +20,9 @@ public class Healthscript : MonoBehaviour
 
     void Update()
     {
+        // Passive health regeneration
+        RegenerateHealth();
+
         // Debug controls for testing damage and healing
         if (Input.GetKeyDown(KeyCode.Return))
         {
@@ -46,6 +50,16 @@ public class Healthscript : MonoBehaviour
     {
         currentHealth += healingAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Prevent overhealing
+        UpdateHealthBar();
+    }
+
+    private void RegenerateHealth()
+    {
+        // Regenerate health over time based on the health regen rate
+        float regenAmount = (healthRegenRate / 100f) * maxHealth * Time.deltaTime;
+        currentHealth += regenAmount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Prevent overhealing
+
         UpdateHealthBar();
     }
 
@@ -77,5 +91,4 @@ public class Healthscript : MonoBehaviour
             Takedamage(collisionDamage);
         }
     }
-
 }

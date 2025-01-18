@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    private EnergyBar energyBar;
     public GameObject bulletPrefab;      // Reference to the bullet prefab
     public Transform firePoint;          // The point where bullets are fired from
     public float bulletSpeed = 10f;      // Speed of the bullet
@@ -12,14 +13,25 @@ public class Gun : MonoBehaviour
     private AudioSource audioSource;
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        energyBar = GetComponent<EnergyBar>();
+        if (energyBar == null)
+        {
+            Debug.LogError("EnergyBar script is missing from this GameObject!");
+        }
     }
     void Update()
     {
         // Fire on left mouse button or space bar press
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Shoot();
+            if (energyBar != null && energyBar.TryConsumeEnergy())
+            {
+                Shoot();
+            }
+            else
+            {
+                Debug.Log("Not enough energy to shoot!");
+            }
         }
     }
 

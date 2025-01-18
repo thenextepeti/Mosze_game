@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3870718998187285115}
   - component: {fileID: 906636729684393080}
   - component: {fileID: 4289315207649067903}
+  - component: {fileID: 2582215825701410256}
   m_Layer: 0
   m_Name: player 1
   m_TagString: Player
@@ -315,6 +316,23 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   collisionDamage: 10
+--- !u!114 &2582215825701410256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081297023001871875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb08465d2a0b9741bcfda5aa9e977b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnergy: 100
+  currentEnergy: 0
+  energyCostPerShot: 10
+  energyRegenRate: 10
+  energySlider: {fileID: 0}
 --- !u!1 &8597936203325318483
 GameObject:
   m_ObjectHideFlags: 0
