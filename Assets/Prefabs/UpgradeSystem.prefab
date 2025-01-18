@@ -91,6 +91,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeUI
       objectReference: {fileID: 0}
+    - target: {fileID: 4013025302926547001, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2467145486191374175}
+    - target: {fileID: 4013025302926547001, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeMaxHP
+      objectReference: {fileID: 0}
     - target: {fileID: 4570454334489321129, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -111,9 +119,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6477349917832728307, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2467145486191374175}
+    - target: {fileID: 6477349917832728307, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeDamage
+      objectReference: {fileID: 0}
     - target: {fileID: 6479783964926929319, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6485746953695396592, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2467145486191374175}
+    - target: {fileID: 6485746953695396592, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeAttackSpeed
       objectReference: {fileID: 0}
     - target: {fileID: 6504483772819980275, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
       propertyPath: m_Pivot.x
@@ -182,6 +206,30 @@ PrefabInstance:
     - target: {fileID: 6504483772819980275, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894051214391460245, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2467145486191374175}
+    - target: {fileID: 6894051214391460245, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeEnergyRegen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7518225019520608448, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2467145486191374175}
+    - target: {fileID: 7518225019520608448, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeHPRegen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701761989225493023, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2467145486191374175}
+    - target: {fileID: 7701761989225493023, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeMaxEnergy
       objectReference: {fileID: 0}
     - target: {fileID: 8111144663968190710, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
       propertyPath: m_AnchorMax.y
