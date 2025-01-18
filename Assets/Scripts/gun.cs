@@ -59,6 +59,6 @@ public class Gun : MonoBehaviour
 
     public void Playshootsound()
     {
-        audioSource.PlayOneShot(shootsound);
+        //audioSource.PlayOneShot(shootsound);
     }
 }
