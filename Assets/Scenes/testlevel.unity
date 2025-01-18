@@ -560,9 +560,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a685147d237facb4997c1aa1afc32241, type: 3}
---- !u!114 &1521425608 stripped
+--- !u!114 &1521425612 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 610191470161903789, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
   m_PrefabInstance: {fileID: 1578204016}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -579,18 +579,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 610191470161903789, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
-      propertyPath: center
-      value: 
-      objectReference: {fileID: 1614232832}
-    - target: {fileID: 610191470161903789, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
-      propertyPath: activeEnemies
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 610191470161903789, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
-      propertyPath: timebetweenWaves
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1206613453492307668, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -654,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 4479680568870556994, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: GenReady.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1521425608}
+      objectReference: {fileID: 1521425612}
     - target: {fileID: 4479680568870556994, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: GenReady.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -671,6 +659,30 @@ PrefabInstance:
       propertyPath: GenReady.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: center
+      value: 
+      objectReference: {fileID: 1614232832}
+    - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 2822854687298782902, guid: ce75fedb194252f4f8ffe925b7d7b5d8, type: 3}
+    - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: Waves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: timebetweenWaves
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: Waves.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 67305e10047e6f94e9f8b425dfb6761c, type: 2}
+    - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: Waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 67305e10047e6f94e9f8b425dfb6761c, type: 2}
     - target: {fileID: 5792739106679305784, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: center
       value: 
@@ -784,7 +796,7 @@ PrefabInstance:
     - target: {fileID: 7715282292070583264, guid: e40f46dea707547489c9f75474e4b627, type: 3}
       propertyPath: waveManager
       value: 
-      objectReference: {fileID: 1521425608}
+      objectReference: {fileID: 1521425612}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

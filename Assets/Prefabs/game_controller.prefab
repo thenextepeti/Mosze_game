@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1206613453492307668}
   - component: {fileID: 4479680568870556994}
   - component: {fileID: 5792739106679305784}
-  - component: {fileID: 610191470161903789}
+  - component: {fileID: 4872363574610630651}
   m_Layer: 0
   m_Name: game_controller
   m_TagString: Untagged
@@ -68,7 +68,7 @@ MonoBehaviour:
   spawnMinDistance: 50
   spawnMaxDistance: 60
   center: {fileID: 0}
---- !u!114 &610191470161903789
+--- !u!114 &4872363574610630651
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,14 +80,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77827a67570c7fc49be8f56ecbf09e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesPerWave: 5
-  totalWaves: 5
   timebetweenWaves: 30
   remainingTime: 0
   WaveLengt: 20
-  currentWave: 1
-  activeEnemies: 1
-  enemyPrefab: {fileID: 2822854687298782902, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+  currentWave: 0
+  activeEnemies: 2
+  Waves:
+  - {fileID: 11400000, guid: 67305e10047e6f94e9f8b425dfb6761c, type: 2}
   spawnMinDistance: 50
   spawnMaxDistance: 60
   center: {fileID: 0}

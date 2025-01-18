@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public int enemiesPerWave = 5; // Ellenségek száma egy hullámban
-    public int totalWaves = 5;// Összes hullám száma
     public float timebetweenWaves = 30f; // Szünet két hullám között
     public float remainingTime = 0; // Szünet két hullám között
     public float WaveLengt = 20f;
@@ -15,10 +13,8 @@ public class WaveManager : MonoBehaviour
     public int currentWave = 1; // Jelenlegi hullám száma
     public int activeEnemies = 1; //testpályán egy
 
-    /* void Start()
-     {
-         StartCoroutine(WavesStart());
-     }*/
+    public List<WaveConfig> Waves; // Hullámok listája (ScriptableObject-ek)
+ 
     public void Startwave()
     {
         StartCoroutine(WavesStart());
@@ -26,8 +22,9 @@ public class WaveManager : MonoBehaviour
     IEnumerator WavesStart()
     {
         {
-            while (currentWave < (totalWaves+1))
+            while (currentWave < 2)
             {
+                Debug.Log($"Hullám {currentWave} elkezdõdött!");
                 // Indítsd el a hullámot
                 yield return StartCoroutine(SpawnWave());
 
@@ -37,7 +34,7 @@ public class WaveManager : MonoBehaviour
                     yield return null; // Várj egy frame-et
                 }
 
-                Debug.Log($"Hullám {currentWave + 1} véget ért!");
+                Debug.Log($"Hullám {currentWave} véget ért!");
                 Debug.Log($"Következõ Hullám {timebetweenWaves}s múlva kezdõdik !");
                 // 20 másodperc szünet a következõ hullám elõtt
                 //yield return new WaitForSeconds(timebetweenWaves);
@@ -47,21 +44,20 @@ public class WaveManager : MonoBehaviour
                     remainingTime -= Time.deltaTime; // Idõ csökkentése
                     yield return null; // Vár egy frame-et
                 }
-
                 currentWave++;
             }
-
             Debug.Log("Az összes hullám befejezõdött!");
         }
     }
 
     private IEnumerator SpawnWave()
     {
-        Debug.Log($"Hullám {currentWave + 1} elkezdõdött!");
-        for (int i = 0; i < enemiesPerWave; i++)
+        WaveConfig currentWaveConfig = Waves[currentWave];
+        List<GameObject> currentWavePrefabs = currentWaveConfig.enemyPrefabs;
+        foreach (GameObject enemyprefab in currentWavePrefabs)
         {
             // Ellenség spawnolása
-            SpawnEnemyinCirce();
+            SpawnEnemyinCirce(enemyprefab);
             activeEnemies++;
 
             yield return new WaitForSeconds(1f); // Késleltetés az ellenségek között
@@ -77,13 +73,13 @@ public class WaveManager : MonoBehaviour
 
     //Spanw enemy in circle átalakítva a Wave-hez
 
-    public GameObject enemyPrefab; // Az ellenség prefabja
+  
     // 1: A játékos camerán kívûl egy körgyürûben
     public float spawnMinDistance = 50f; // Minimum távolság a kamerától
     public float spawnMaxDistance = 60f; // Maximum távolság a kamerától
     public Transform center;
 
-    public void SpawnEnemyinCirce()
+    public void SpawnEnemyinCirce(GameObject enemyprefab)
     {
         // Véletlenszerû szög a teljes 360 fokból
         float randomAngle = Random.Range(0f, 360f);
@@ -98,7 +94,7 @@ public class WaveManager : MonoBehaviour
         );
 
         // Ellenség létrehozása a generált pozícióban
-        Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+        Instantiate(enemyprefab, spawnPosition, Quaternion.identity);
     }
 }
 
