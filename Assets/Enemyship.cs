@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Enemyship : MonoBehaviour
 {
     // az életerõ höz szükséges dolgok
-    public int maxHealth = 10; // Maximum health of the enemy
+    public int maxHealth = 20; // Maximum health of the enemy
     private int currentHealth;
     public UnityEvent Enemydeath;
     void Awake()

@@ -9,16 +9,35 @@ public class Gun : MonoBehaviour
     public Transform firePoint;          // The point where bullets are fired from
     public float bulletSpeed = 10f;      // Speed of the bullet
     public int playerDamage = 5;         // Amount of damage the player does
-    public AudioClip shootsound; // A hangfájl
+    public AudioClip shootsound;         // A sound clip for shooting
     private AudioSource audioSource;
-    private void Start()
+
+    // Buttons for upgrading playerDamage and bulletSpeed
+    public UnityEngine.UI.Button increaseDamageButton; // Button to increase player damage
+    public UnityEngine.UI.Button increaseSpeedButton;  // Button to increase bullet speed
+
+    void Start()
     {
         energyBar = GetComponent<EnergyBar>();
+        audioSource = GetComponent<AudioSource>();
+
         if (energyBar == null)
         {
             Debug.LogError("EnergyBar script is missing from this GameObject!");
         }
+
+        // Attach the upgrade button functions
+        if (increaseDamageButton != null)
+        {
+            increaseDamageButton.onClick.AddListener(IncreasePlayerDamage);
+        }
+
+        if (increaseSpeedButton != null)
+        {
+            increaseSpeedButton.onClick.AddListener(IncreaseBulletSpeed);
+        }
     }
+
     void Update()
     {
         // Fire on left mouse button or space bar press
@@ -43,7 +62,8 @@ public class Gun : MonoBehaviour
         // Set the bullet velocity
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.up * bulletSpeed;
-        //play shoot sound
+
+        // Play shoot sound
         Playshootsound();
 
         // Pass the player's damage value to the bullet
@@ -59,6 +79,23 @@ public class Gun : MonoBehaviour
 
     public void Playshootsound()
     {
-        //audioSource.PlayOneShot(shootsound);
+        if (audioSource != null && shootsound != null)
+        {
+            audioSource.PlayOneShot(shootsound);
+        }
+    }
+
+    // Method to increase player damage by 10%
+    private void IncreasePlayerDamage()
+    {
+        playerDamage = Mathf.RoundToInt(playerDamage * 1.1f); // Increase damage by 10%
+        Debug.Log($"Player Damage increased to: {playerDamage}");
+    }
+
+    // Method to increase bullet speed by 10%
+    private void IncreaseBulletSpeed()
+    {
+        bulletSpeed *= 1.1f; // Increase bullet speed by 10%
+        Debug.Log($"Bullet Speed increased to: {bulletSpeed}");
     }
 }

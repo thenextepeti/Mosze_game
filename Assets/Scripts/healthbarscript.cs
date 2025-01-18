@@ -11,11 +11,26 @@ public class Healthscript : MonoBehaviour
     public float collisionDamage = 10f; // Damage taken on collision
     public float healthRegenRate = 2f;  // Percentage of max health regenerated per second
 
+    // Buttons for upgrading max health and health regen rate
+    public Button increaseMaxHealthButton; // Button to increase max health
+    public Button increaseHealthRegenButton; // Button to increase health regeneration rate
+
     void Start()
     {
         // Initialize health to maximum value
         currentHealth = maxHealth;
         UpdateHealthBar();
+
+        // Attach the button functions
+        if (increaseMaxHealthButton != null)
+        {
+            increaseMaxHealthButton.onClick.AddListener(IncreaseMaxHealth);
+        }
+
+        if (increaseHealthRegenButton != null)
+        {
+            increaseHealthRegenButton.onClick.AddListener(IncreaseHealthRegen);
+        }
     }
 
     void Update()
@@ -90,5 +105,25 @@ public class Healthscript : MonoBehaviour
             Debug.Log($"{gameObject.name} collided with {collision.gameObject.name} and took damage!");
             Takedamage(collisionDamage);
         }
+    }
+
+    // Method to increase max health by 10%
+    private void IncreaseMaxHealth()
+    {
+        maxHealth *= 1.1f; // Increase max health by 10%
+
+        // Ensure current health does not exceed the new max health
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+
+        // Update health bar
+        UpdateHealthBar();
+    }
+
+    // Method to increase health regen rate by 10%
+    private void IncreaseHealthRegen()
+    {
+        healthRegenRate *= 1.1f; // Increase health regen rate by 10%
+
+        // Health will regenerate faster, which is already handled in the Update method
     }
 }

@@ -6,79 +6,75 @@ public class UpgradeManager : MonoBehaviour
 {
     public PlayerStats playerStats;
 
-    public PlayerInventory playerInventory; // Hivatkozás a PlayerInventory scriptre
+    public PlayerInventory playerInventory; // Reference to the PlayerInventory script
 
-
-    // Max HP fejlesztés elemei
+    // Max HP upgrade elements
     public TMP_Text maxHPText;
     public Slider maxHPSlider;
     public Button upgradeMaxHPButton;
     public TMP_Text maxHPCostText;
 
-    // HP Regen fejlesztés elemei
+    // HP Regen upgrade elements
     public TMP_Text hpRegenText;
     public Slider hpRegenSlider;
     public Button upgradeHPRegenButton;
     public TMP_Text hpRegenCostText;
 
-    // Max Energy fejlesztés elemei
+    // Max Energy upgrade elements
     public TMP_Text maxEnergyText;
     public Slider maxEnergySlider;
     public Button upgradeMaxEnergyButton;
     public TMP_Text maxEnergyCostText;
 
-    // Energy Regen fejlesztés elemei
+    // Energy Regen upgrade elements
     public TMP_Text energyRegenText;
     public Slider energyRegenSlider;
     public Button upgradeEnergyRegenButton;
     public TMP_Text energyRegenCostText;
 
-    // Damage fejlesztés elemei
+    // Damage upgrade elements
     public TMP_Text damageText;
     public Slider damageSlider;
     public Button upgradeDamageButton;
     public TMP_Text damageCostText;
 
-    // Attack Speed fejlesztés elemei
+    // Attack Speed upgrade elements
     public TMP_Text attackSpeedText;
     public Slider attackSpeedSlider;
     public Button upgradeAttackSpeedButton;
     public TMP_Text attackSpeedCostText;
 
-    // Nyersanyag kezelés
-    private int playerCurrency = 0; // A játékos kezdõ nyersanyaga
+    // Resource management
+    private int playerCurrency = 0; // The player's starting resources
 
     void Start()
     {
         UpdateUI();
     }
 
-    // Nyersanyag hozzáadása
+    // Adding resources to the player
     public void AddResources(int amount)
     {
         playerCurrency += amount;
-        UpdateUI(); // Frissítjük a UI-t, amikor változik a nyersanyag
+        UpdateUI(); // Update the UI when the resources change
     }
 
-    private int CalculateUpgradeCost(int level)
+    // Fixed upgrade cost for each upgrade
+    private int CalculateUpgradeCost()
     {
-        if (level == 0)
-        {
-            return 5; // Az elsõ fejlesztés költsége
-        }
-        return 5 + (level * 10); // A további fejlesztések költsége
+        return 5; // Fixed cost for each upgrade
     }
 
     public void UpgradeMaxHP()
     {
-        int cost = CalculateUpgradeCost(playerStats.currentHPUpgradeLevel);
+        int cost = CalculateUpgradeCost();
         if (playerStats.currentHPUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
-            playerStats.maxHP += 10; // Példa: +10 Max HP szintenként
+            playerStats.maxHP += 10; // Example: +10 Max HP per upgrade level
             playerStats.currentHPUpgradeLevel++;
 
-            // Nyersanyag levonása és szöveg frissítése
+            // Subtract resources and update UI
             if (playerInventory != null)
             {
                 playerInventory.SpendResources(cost);
@@ -90,14 +86,14 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeHPRegen()
     {
-        int cost = CalculateUpgradeCost(playerStats.currentRegenUpgradeLevel);
+        int cost = CalculateUpgradeCost();
         if (playerStats.currentRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
-            playerStats.hpRegen += 0.5f; // Példa: +0.5 regen szintenként
+            playerStats.hpRegen += 0.5f; // Example: +0.5 HP Regen per upgrade level
             playerStats.currentRegenUpgradeLevel++;
 
-            // Nyersanyag levonása és szöveg frissítése
+            // Subtract resources and update UI
             if (playerInventory != null)
             {
                 playerInventory.SpendResources(cost);
@@ -109,14 +105,14 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeMaxEnergy()
     {
-        int cost = CalculateUpgradeCost(playerStats.currentEnergyUpgradeLevel);
+        int cost = CalculateUpgradeCost();
         if (playerStats.currentEnergyUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
-            playerStats.maxEnergy += 10; // Példa: +10 max energia szintenként
+            playerStats.maxEnergy += 10; // Example: +10 Max Energy per upgrade level
             playerStats.currentEnergyUpgradeLevel++;
 
-            // Nyersanyag levonása és szöveg frissítése
+            // Subtract resources and update UI
             if (playerInventory != null)
             {
                 playerInventory.SpendResources(cost);
@@ -128,14 +124,14 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeEnergyRegen()
     {
-        int cost = CalculateUpgradeCost(playerStats.currentEnergyRegenUpgradeLevel);
+        int cost = CalculateUpgradeCost();
         if (playerStats.currentEnergyRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
-            playerStats.energyRegen += 0.5f; // Példa: +0.5 energia regeneráció szintenként
+            playerStats.energyRegen += 0.5f; // Example: +0.5 Energy Regen per upgrade level
             playerStats.currentEnergyRegenUpgradeLevel++;
 
-            // Nyersanyag levonása és szöveg frissítése
+            // Subtract resources and update UI
             if (playerInventory != null)
             {
                 playerInventory.SpendResources(cost);
@@ -147,14 +143,14 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeDamage()
     {
-        int cost = CalculateUpgradeCost(playerStats.currentDamageUpgradeLevel);
+        int cost = CalculateUpgradeCost();
         if (playerStats.currentDamageUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
-            playerStats.damage += 5; // Példa: +5 damage szintenként
+            playerStats.damage += 5; // Example: +5 Damage per upgrade level
             playerStats.currentDamageUpgradeLevel++;
 
-            // Nyersanyag levonása és szöveg frissítése
+            // Subtract resources and update UI
             if (playerInventory != null)
             {
                 playerInventory.SpendResources(cost);
@@ -166,14 +162,14 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeAttackSpeed()
     {
-        int cost = CalculateUpgradeCost(playerStats.currentAttackSpeedUpgradeLevel);
+        int cost = CalculateUpgradeCost();
         if (playerStats.currentAttackSpeedUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
-            playerStats.attackSpeed += 0.1f; // Példa: +0.1 attack speed szintenként
+            playerStats.attackSpeed += 0.1f; // Example: +0.1 Attack Speed per upgrade level
             playerStats.currentAttackSpeedUpgradeLevel++;
 
-            // Nyersanyag levonása és szöveg frissítése
+            // Subtract resources and update UI
             if (playerInventory != null)
             {
                 playerInventory.SpendResources(cost);
@@ -185,58 +181,58 @@ public class UpgradeManager : MonoBehaviour
 
     void UpdateUI()
     {
-        // Max HP fejlesztés
+        // Max HP upgrade
         maxHPText.text = $"Max HP: {playerStats.maxHP} (Level {playerStats.currentHPUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         maxHPSlider.value = playerStats.currentHPUpgradeLevel;
         maxHPSlider.maxValue = playerStats.maxUpgradeLevel;
-        maxHPCostText.text = $"Költség: {CalculateUpgradeCost(playerStats.currentHPUpgradeLevel)}";
+        maxHPCostText.text = $"Cost: {CalculateUpgradeCost()}";
         upgradeMaxHPButton.interactable =
             playerStats.currentHPUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost(playerStats.currentHPUpgradeLevel);
+            playerCurrency >= CalculateUpgradeCost();
 
-        // HP Regen fejlesztés
+        // HP Regen upgrade
         hpRegenText.text = $"HP Regen: {playerStats.hpRegen} (Level {playerStats.currentRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         hpRegenSlider.value = playerStats.currentRegenUpgradeLevel;
         hpRegenSlider.maxValue = playerStats.maxUpgradeLevel;
-        hpRegenCostText.text = $"Költség: {CalculateUpgradeCost(playerStats.currentRegenUpgradeLevel)}";
+        hpRegenCostText.text = $"Cost: {CalculateUpgradeCost()}";
         upgradeHPRegenButton.interactable =
             playerStats.currentRegenUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost(playerStats.currentRegenUpgradeLevel);
+            playerCurrency >= CalculateUpgradeCost();
 
-        // Max Energy fejlesztés
+        // Max Energy upgrade
         maxEnergyText.text = $"Max Energy: {playerStats.maxEnergy} (Level {playerStats.currentEnergyUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         maxEnergySlider.value = playerStats.currentEnergyUpgradeLevel;
         maxEnergySlider.maxValue = playerStats.maxUpgradeLevel;
-        maxEnergyCostText.text = $"Költség: {CalculateUpgradeCost(playerStats.currentEnergyUpgradeLevel)}";
+        maxEnergyCostText.text = $"Cost: {CalculateUpgradeCost()}";
         upgradeMaxEnergyButton.interactable =
             playerStats.currentEnergyUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost(playerStats.currentEnergyUpgradeLevel);
+            playerCurrency >= CalculateUpgradeCost();
 
-        // Energy Regen fejlesztés
+        // Energy Regen upgrade
         energyRegenText.text = $"Energy Regen: {playerStats.energyRegen} (Level {playerStats.currentEnergyRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         energyRegenSlider.value = playerStats.currentEnergyRegenUpgradeLevel;
         energyRegenSlider.maxValue = playerStats.maxUpgradeLevel;
-        energyRegenCostText.text = $"Költség: {CalculateUpgradeCost(playerStats.currentEnergyRegenUpgradeLevel)}";
+        energyRegenCostText.text = $"Cost: {CalculateUpgradeCost()}";
         upgradeEnergyRegenButton.interactable =
             playerStats.currentEnergyRegenUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost(playerStats.currentEnergyRegenUpgradeLevel);
+            playerCurrency >= CalculateUpgradeCost();
 
-        // Damage fejlesztés
+        // Damage upgrade
         damageText.text = $"Damage: {playerStats.damage} (Level {playerStats.currentDamageUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         damageSlider.value = playerStats.currentDamageUpgradeLevel;
         damageSlider.maxValue = playerStats.maxUpgradeLevel;
-        damageCostText.text = $"Költség: {CalculateUpgradeCost(playerStats.currentDamageUpgradeLevel)}";
+        damageCostText.text = $"Cost: {CalculateUpgradeCost()}";
         upgradeDamageButton.interactable =
             playerStats.currentDamageUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost(playerStats.currentDamageUpgradeLevel);
+            playerCurrency >= CalculateUpgradeCost();
 
-        // Attack Speed fejlesztés
+        // Attack Speed upgrade
         attackSpeedText.text = $"Attack Speed: {playerStats.attackSpeed} (Level {playerStats.currentAttackSpeedUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         attackSpeedSlider.value = playerStats.currentAttackSpeedUpgradeLevel;
         attackSpeedSlider.maxValue = playerStats.maxUpgradeLevel;
-        attackSpeedCostText.text = $"Költség: {CalculateUpgradeCost(playerStats.currentAttackSpeedUpgradeLevel)}";
+        attackSpeedCostText.text = $"Cost: {CalculateUpgradeCost()}";
         upgradeAttackSpeedButton.interactable =
             playerStats.currentAttackSpeedUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost(playerStats.currentAttackSpeedUpgradeLevel);
+            playerCurrency >= CalculateUpgradeCost();
     }
 }
