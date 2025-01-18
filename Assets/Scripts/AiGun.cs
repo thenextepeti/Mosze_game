@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class AiGun : MonoBehaviour
 {
+    public Enemyship enemyship;
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float bulletSpeed = 10f;
-    public float fireRate = 0.5f;
+    private float bulletSpeed = 10f;
+    private float fireRate = 0.5f;
     private float nextFireTime = 0f;
     // Start is called before the first frame update
     void Awake()
     {
-        
+        enemyship = GetComponent<Enemyship>();
+        bulletSpeed = enemyship.bulletSpeed;
+        fireRate = enemyship.fireRate;
     }
 
     // Update is called once per frame

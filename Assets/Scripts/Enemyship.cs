@@ -17,6 +17,10 @@ public class Enemyship : MonoBehaviour
     public float Lasulas = 0.99f;
     public float Forgás = 30f;
 
+    //lövéshez szükséges adatok
+    public int bulletSpeed = 50;
+    public float fireRate = 0.5f;
+
     void Awake()
     {
         // Set the initial health to the maximum health

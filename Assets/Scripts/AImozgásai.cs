@@ -7,8 +7,7 @@ public class AImozgásai : MonoBehaviour
 {
     public Enemyship enemyship;
     // alap adatok a amik majd felülíródnak
-    // Az ellenséges űrhajó gyorsulása
-    private float Force = 15;
+    private float Force = 15; // Az ellenséges űrhajó gyorsulása
     private float MaxSpeed = 20f;
     private float Lasulas = 0.99f;
     private float Forgás = 30f;
