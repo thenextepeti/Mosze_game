@@ -5574,6 +5574,10 @@ PrefabInstance:
       propertyPath: resourceText
       value: 
       objectReference: {fileID: 1840372214}
+    - target: {fileID: 2490044429786898781, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: upgradeManager
+      value: 
+      objectReference: {fileID: 1321621157}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5648,6 +5652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 1614232839}
+  playerInventory: {fileID: 1614232840}
   maxHPText: {fileID: 2096970027}
   maxHPSlider: {fileID: 1632559729}
   upgradeMaxHPButton: {fileID: 1688805606}
@@ -5672,7 +5677,6 @@ MonoBehaviour:
   attackSpeedSlider: {fileID: 218595337}
   upgradeAttackSpeedButton: {fileID: 465129490}
   attackSpeedCostText: {fileID: 792074552}
-  resourceText: {fileID: 1840372214}
 --- !u!4 &1321621158
 Transform:
   m_ObjectHideFlags: 0
@@ -6679,6 +6683,17 @@ MonoBehaviour:
   currentEnergyRegenUpgradeLevel: 0
   currentDamageUpgradeLevel: 0
   currentAttackSpeedUpgradeLevel: 0
+--- !u!114 &1614232840 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2490044429786898781, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+  m_PrefabInstance: {fileID: 1273358112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207700464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9cf9ab8c1e2be347b3d3e03d8f8a8ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1622618227
 GameObject:
   m_ObjectHideFlags: 0
