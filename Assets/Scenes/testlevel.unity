@@ -141,6 +141,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1080063401907579684, guid: ce75fedb194252f4f8ffe925b7d7b5d8, type: 3}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2822854687298782902, guid: ce75fedb194252f4f8ffe925b7d7b5d8, type: 3}
       propertyPath: m_Name
       value: "\xDCld\xF6z\u0151\u0171rhaj\xF3 1"
@@ -425,6 +429,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7058736899119272144, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -962.2064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058736899119272144, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -481.0972
+      objectReference: {fileID: 0}
     - target: {fileID: 7154412081418288834, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -476,6 +488,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 906636729684393080, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1244df6b0b43c3d408b7e2ee0bb4c217, type: 3}
     - target: {fileID: 1454348857656138170, guid: a3f0644eb6034234e889272bb924a894, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -656,6 +672,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3992486219583105060, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+      propertyPath: bulletSpeed
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2242497746095071302, guid: a685147d237facb4997c1aa1afc32241, type: 3}
       propertyPath: player
       value: 
@@ -842,7 +862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: timebetweenWaves
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: Waves.Array.data[0]

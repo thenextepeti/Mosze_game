@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public float timebetweenWaves = 30f; // Szünet két hullám között
+    public float timebetweenWaves = 20; // Szünet két hullám között
     public float remainingTime = 0; // Szünet két hullám között
     public float WaveLengt = 20f;
 
