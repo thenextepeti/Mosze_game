@@ -26,7 +26,7 @@ public class WaveManager : MonoBehaviour
     IEnumerator WavesStart()
     {
         {
-            while (currentWave < totalWaves)
+            while (currentWave < (totalWaves+1))
             {
                 // Indítsd el a hullámot
                 yield return StartCoroutine(SpawnWave());

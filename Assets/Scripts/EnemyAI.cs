@@ -14,9 +14,7 @@ public class EnemyAI : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
-
         mozgások = GetComponent<AImozgásai>();
-
     }
 
     // Update is called once per frame
@@ -33,10 +31,8 @@ public class EnemyAI : MonoBehaviour
                     AiShoot();
                     nextFireTime = Time.time + fireRate;
                 }
-                    
             }
         }
-
     }
 
     void MoweTowradsPlayer()
@@ -55,7 +51,6 @@ public class EnemyAI : MonoBehaviour
     private float nextFireTime = 0f;
     void AiShoot() 
     { 
-        
         // Create bullet at firePoint position and rotation
         GameObject Bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet.GetComponent<EnemyBullet>().shooter = gameObject; // A kilövõ gameObject lesz a lövedék "shooter"-e
