@@ -38,4 +38,11 @@ public class AImozgásai : MonoBehaviour
             rb.velocity = Vector2.ClampMagnitude(rb.velocity, MaxSpeed);
         }
     }
+
+    public void TurntoTargret(Transform target)
+    {
+        Vector2 direction = (target.position - transform.position).normalized;
+        float rotationSteer = Vector3.Cross(transform.up, direction).z;
+        rb.angularVelocity = rotationSteer * Forgás * 5f;
+    }
 }
