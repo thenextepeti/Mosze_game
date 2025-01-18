@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 3133759697443211815}
   - component: {fileID: 7932328061417051534}
   - component: {fileID: 3870718998187285115}
+
   - component: {fileID: 906636729684393080}
   - component: {fileID: 4289315207649067903}
   - component: {fileID: 2582215825701410256}
+
   m_Layer: 0
   m_Name: player 1
   m_TagString: Player
@@ -204,6 +206,7 @@ PolygonCollider2D:
       - {x: -0.32, y: -0.32}
       - {x: 0.32, y: -0.32}
   m_UseDelaunayMesh: 0
+
 --- !u!82 &906636729684393080
 AudioSource:
   m_ObjectHideFlags: 0
@@ -301,6 +304,7 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!114 &4289315207649067903
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -309,6 +313,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2081297023001871875}
   m_Enabled: 1
   m_EditorHideFlags: 0
+
   m_Script: {fileID: 11500000, guid: 6f7ab4e4d7989614bb0e99072058cfef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -317,6 +322,7 @@ MonoBehaviour:
   currentHealth: 0
   collisionDamage: 10
 --- !u!114 &2582215825701410256
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -325,6 +331,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2081297023001871875}
   m_Enabled: 1
   m_EditorHideFlags: 0
+
   m_Script: {fileID: 11500000, guid: fbb08465d2a0b9741bcfda5aa9e977b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -333,6 +340,7 @@ MonoBehaviour:
   energyCostPerShot: 10
   energyRegenRate: 10
   energySlider: {fileID: 0}
+
 --- !u!1 &8597936203325318483
 GameObject:
   m_ObjectHideFlags: 0
