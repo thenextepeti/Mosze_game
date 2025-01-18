@@ -10,9 +10,6 @@ public class EnergyBar : MonoBehaviour
 
     public Image energyBarImage;        // Reference to the Image used for the energy bar
 
-    public Button increaseMaxEnergyButton; // Button to increase max energy
-    public Button increaseEnergyRegenButton; // Button to increase energy regeneration rate
-
     void Start()
     {
         currentEnergy = maxEnergy; // Initialize energy to max
@@ -21,17 +18,6 @@ public class EnergyBar : MonoBehaviour
         if (energyBarImage != null)
         {
             UpdateEnergyBar();
-        }
-
-        // Attach the button functions
-        if (increaseMaxEnergyButton != null)
-        {
-            increaseMaxEnergyButton.onClick.AddListener(IncreaseMaxEnergy);
-        }
-
-        if (increaseEnergyRegenButton != null)
-        {
-            increaseEnergyRegenButton.onClick.AddListener(IncreaseEnergyRegen);
         }
     }
 
@@ -72,26 +58,5 @@ public class EnergyBar : MonoBehaviour
     {
         // Update the fill amount of the energy bar image
         energyBarImage.fillAmount = currentEnergy / maxEnergy;
-    }
-
-    // Method to increase max energy by 10%
-    private void IncreaseMaxEnergy()
-    {
-        maxEnergy *= 1.1f; // Increase max energy by 10%
-
-        // Ensure current energy does not exceed the new max energy
-        currentEnergy = Mathf.Min(currentEnergy, maxEnergy);
-
-        // Update energy bar
-        UpdateEnergyBar();
-    }
-
-    // Method to increase energy regen rate by 10%
-    private void IncreaseEnergyRegen()
-    {
-        energyRegenRate *= 1.1f; // Increase energy regen rate by 10%
-
-        // Update energy regeneration (this will be handled automatically each frame)
-        RegenerateEnergy();
     }
 }
