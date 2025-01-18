@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
@@ -14,15 +12,27 @@ public class PlayerBullet : MonoBehaviour
             return;
         }
 
-        // Check if the object has a health system
-        
+        // Check if the object is an enemy
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Enemyship Enemyship = collision.gameObject.GetComponent<Enemyship>();
-            // Apply damage to the enemy
-            Enemyship.TakeDamage(damage);
+            Enemyship enemyShip = collision.gameObject.GetComponent<Enemyship>();
+            if (enemyShip != null)
+            {
+                // Apply damage to the enemy
+                enemyShip.TakeDamage(damage);
+            }
         }
-        
+        // Check if the object is an asteroid
+        else if (collision.gameObject.CompareTag("aszteroida"))
+        {
+            Asteroid asteroid = collision.gameObject.GetComponent<Asteroid>();
+            if (asteroid != null)
+            {
+                // Apply damage to the asteroid
+                asteroid.TakeDamage(damage);
+            }
+        }
+
         // Destroy the bullet after impact
         Destroy(gameObject);
     }
