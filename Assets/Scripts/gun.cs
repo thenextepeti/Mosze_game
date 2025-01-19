@@ -6,11 +6,11 @@ public class Gun : MonoBehaviour
 {
     private EnergyBar energyBar;
     public GameObject bulletPrefab;      // Reference to the bullet prefab
-    public Transform firePoint;          // The point where bullets are fired from
-    public float bulletSpeed = 50;      // Speed of the bullet
-    public float playerDamage = 5;         // Amount of damage the player does
-    public AudioClip shootsound; // A hangfájl
+    public float bulletSpeed = 50;       // Speed of the bullet
+    public float playerDamage = 5;       // Amount of damage the player does
+    public AudioClip shootsound;         // Shooting sound effect
     private AudioSource audioSource;
+
     // Buttons for upgrading playerDamage and bulletSpeed
     public UnityEngine.UI.Button increaseDamageButton;
     public UnityEngine.UI.Button increaseSpeedButton;
@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     private void Start()
     {
         energyBar = GetComponent<EnergyBar>();
@@ -26,6 +27,7 @@ public class Gun : MonoBehaviour
         {
             Debug.LogError("EnergyBar script is missing from this GameObject!");
         }
+
         // Attach the upgrade button functions
         if (increaseDamageButton)
         {
@@ -36,6 +38,7 @@ public class Gun : MonoBehaviour
             increaseSpeedButton.onClick.AddListener(IncreaseBulletSpeed);
         }
     }
+
     void Update()
     {
         // Fire on left mouse button or space bar press
@@ -54,37 +57,53 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
-        // Create bullet at firePoint position and rotation
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        // Find all fire points tagged with "PlayerFirePoint"
+        GameObject[] firePoints = GameObject.FindGameObjectsWithTag("playerfirepoint");
 
-        // Set the bullet velocity
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint.up * bulletSpeed;
-        //play shoot sound
-        Playshootsound();
-
-        // Pass the player's damage value to the bullet
-        PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet>();
-        if (playerBullet != null)
+        if (firePoints.Length == 0)
         {
-            playerBullet.damage = playerDamage;
+            Debug.LogWarning("No GameObjects found with the tag 'PlayerFirePoint'!");
+            return;
         }
 
-        // Optional: Destroy the bullet after a certain time to avoid clutter
-        Destroy(bullet, 2f);
+        foreach (GameObject firePoint in firePoints)
+        {
+            // Create bullet at each firePoint's position and rotation
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.transform.position, firePoint.transform.rotation);
+
+            // Set the bullet velocity
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.velocity = firePoint.transform.up * bulletSpeed;
+
+            // Play shoot sound
+            Playshootsound();
+
+            // Pass the player's damage value to the bullet
+            PlayerBullet playerBullet = bullet.GetComponent<PlayerBullet>();
+            if (playerBullet != null)
+            {
+                playerBullet.damage = playerDamage;
+            }
+
+            // Optional: Destroy the bullet after a certain time to avoid clutter
+            Destroy(bullet, 2f);
+        }
     }
+
     public void Playshootsound()
     {
         audioSource.PlayOneShot(shootsound);
     }
+
     private void IncreasePlayerDamage()
     {
         playerDamage = Mathf.RoundToInt(playerDamage * 1.1f); // Increase damage by 10%
         Debug.Log($"Player Damage increased to: {playerDamage}");
-    }// Method to increase player damage by 10%
+    }
+
     private void IncreaseBulletSpeed()
     {
         bulletSpeed *= 1.1f; // Increase bullet speed by 10%
         Debug.Log($"Bullet Speed increased to: {bulletSpeed}");
-    }// Method to increase bullet speed by 10%
+    }
 }
