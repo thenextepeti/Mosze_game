@@ -52,4 +52,31 @@ public class AImozgásai : MonoBehaviour
         float rotationSteer = Vector3.Cross(transform.up, direction).z;
         rb.angularVelocity = rotationSteer * Forgás * 5f;
     }
+    public void MoveToTarget(Vector2 target)
+    {
+        Vector2 self = transform.position;
+        // Az irány, amerre az ellenségnek mennie kell
+        Vector2 direction = (target - self).normalized;
+        float rotationSteer = Vector3.Cross(transform.up, direction).z;
+        rb.angularVelocity = rotationSteer * Forgás * 5f;
+
+        // Az ellenséges űrhajó mozgása a előre
+        rb.AddForce(transform.up * Force);
+
+        //sebesség csökkenés
+        rb.velocity = rb.velocity * Lasulas;
+
+        // Max sebesség
+        if (rb.velocity.magnitude > MaxSpeed)
+        {
+            rb.velocity = Vector2.ClampMagnitude(rb.velocity, MaxSpeed);
+        }
+    }
+    public void TurntoTarget(Vector2 target)
+    {
+        Vector2 self = transform.position;
+        Vector2 direction = (target - self).normalized;
+        float rotationSteer = Vector3.Cross(transform.up, direction).z;
+        rb.angularVelocity = rotationSteer * Forgás * 5f;
+    }
 }

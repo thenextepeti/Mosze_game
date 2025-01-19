@@ -28,7 +28,7 @@ public class Enemyship : MonoBehaviour
         currentHealth = maxHealth;
 
         // feliratkozás a halál eseményre
-        Enemydeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().activeEnemyDeath);
+        //Enemydeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().activeEnemyDeath);
     }
 
     public void TakeDamage(float damage)

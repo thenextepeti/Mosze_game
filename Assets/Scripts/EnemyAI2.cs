@@ -28,23 +28,25 @@ public class EnemyAI2 : MonoBehaviour
             
             if (distanceToPlayer > shootingDistance)
             {
-                MoweTowradsPlayer();
+                MoweTowardsPlayer();
             }
             else
             {
-                mozgások.TurntoTarget(player.transform);
+                TurntoTarget();
                 AiGun.Shoot();
             }
         }
     }
-
-    void MoweTowradsPlayer()
+    
+    private void MoweTowardsPlayer()
     {
         if (mozgások != null)
         {
             mozgások.MoveToTarget(player.transform);
         }
     }
-
-    
+    private void TurntoTarget()
+    {
+        mozgások.TurntoTarget(player.transform);
+    }
 }

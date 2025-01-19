@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 5860450853956049928}
   - component: {fileID: 3213851730554199564}
   - component: {fileID: 672795005432354086}
-  - component: {fileID: 8782313081715162443}
   - component: {fileID: 4433482849507169688}
   - component: {fileID: 4459222528695456751}
   - component: {fileID: 8871252793732832768}
   - component: {fileID: -1080063401907579684}
+  - component: {fileID: -8374994379264160884}
   m_Layer: 6
-  m_Name: "\xDCld\xF6z\u0151\u0171rhaj\xF3 1"
+  m_Name: Enemy3
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 503ed69787bbd954cb5038330fdf3148, type: 3}
-  m_Color: {r: 0.8293181, g: 0.8980392, b: 0.10588237, a: 1}
+  m_Color: {r: 0.10588237, g: 0.59541684, b: 0.8980392, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118,22 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8782313081715162443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2822854687298782902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506328895445226498693ed81c786c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  "mozg\xE1sok": {fileID: 0}
-  AiGun: {fileID: 0}
-  shootingDistance: 30
 --- !u!114 &4433482849507169688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71a077794c8a6ee478fd187c711ee1be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyship: {fileID: 0}
+  enemyship: {fileID: 8871252793732832768}
 --- !u!60 &4459222528695456751
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -219,7 +203,7 @@ MonoBehaviour:
   Force: 15
   MaxSpeed: 20
   Lasulas: 0.99
-  "Forg\xE1s": 40
+  "Forg\xE1s": 60
   bulletSpeed: 50
   fireRate: 0.5
   damage: 10
@@ -235,9 +219,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bbcac3a56187641bd76ba31bbf1afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyship: {fileID: 0}
+  enemyship: {fileID: 8871252793732832768}
   bulletPrefab: {fileID: 7542079746814096266, guid: f07aa08d31fdc1443b8f31fdd6936b95, type: 3}
   firePoint: {fileID: 6994238311979011912}
+--- !u!114 &-8374994379264160884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822854687298782902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63075edb4c02a84fa37ce4d767e5368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  "mozg\xE1sok": {fileID: 4433482849507169688}
+  AiGun: {fileID: -1080063401907579684}
+  shootingDistance: 40
+  playerposition: {x: 0, y: 0}
 --- !u!1 &7939850879666982221
 GameObject:
   m_ObjectHideFlags: 0
