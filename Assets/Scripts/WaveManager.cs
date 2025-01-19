@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
 
     public int currentWave = 1; // Jelenlegi hullám száma
     public int activeEnemies = 1; //testpályán egy
-    public float szorzo = 1.1f;
+    public float szorzo = 1f;
 
     public List<WaveConfig> Waves; // Hullámok listája (ScriptableObject-ek)
  
@@ -102,8 +102,6 @@ public class WaveManager : MonoBehaviour
         {
             enemyship.maxHealth *= szorzó;
             enemyship.damage *= szorzó;
-            enemyship.maxHealth *= szorzó;
-            enemyship.maxHealth *= szorzó;
         }
     }
 }
