@@ -8,10 +8,6 @@ public class UpgradeManager : MonoBehaviour
 
     public PlayerInventory playerInventory; // Reference to the PlayerInventory script
 
-    public Button upgradeButton1;
-    public Button upgradeButton2;
-    public int upgradeCost = 20;  // Cost of the internal upgrades
-
     // Max HP upgrade elements
     public TMP_Text maxHPText;
     public Slider maxHPSlider;
@@ -53,62 +49,7 @@ public class UpgradeManager : MonoBehaviour
 
     void Start()
     {
-        // Add listeners for upgrade buttons
-        upgradeButton1.onClick.AddListener(OnUpgradeButton1Clicked);
-        upgradeButton2.onClick.AddListener(OnUpgradeButton2Clicked);
         UpdateUI();
-    }
-
-    private void OnUpgradeButton1Clicked()
-    {
-        int cost = upgradeCost;
-
-        // Check if the player has enough resources
-        if (playerInventory.collectedResources >= cost)
-        {
-            // Subtract resources
-            playerInventory.SpendResources(cost);  // Spend from the inventory
-
-            // Deduct from the player currency as well (this is the part you were asking for)
-            playerCurrency -= cost;
-
-            // Mark that the player clicked a button
-            playerInventory.OnUpgradeButtonClicked();
-
-            // Update the UI
-            UpdateUI();
-            Debug.Log("Upgrade 1 applied! Resources left: " + playerInventory.collectedResources);
-        }
-        else
-        {
-            Debug.Log("Not enough resources for upgrade 1!");
-        }
-    }
-
-    private void OnUpgradeButton2Clicked()
-    {
-        int cost = upgradeCost;
-
-        // Check if the player has enough resources
-        if (playerInventory.collectedResources >= cost)
-        {
-            // Subtract resources
-            playerInventory.SpendResources(cost);  // Spend from the inventory
-
-            // Deduct from the player currency as well (this is the part you were asking for)
-            playerCurrency -= cost;
-
-            // Mark that the player clicked a button
-            playerInventory.OnUpgradeButtonClicked();
-
-            // Update the UI
-            UpdateUI();
-            Debug.Log("Upgrade 2 applied! Resources left: " + playerInventory.collectedResources);
-        }
-        else
-        {
-            Debug.Log("Not enough resources for upgrade 2!");
-        }
     }
 
     // Adding resources to the player
