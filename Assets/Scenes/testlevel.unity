@@ -420,6 +420,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1273358114}
     - target: {fileID: 2467145486191374175, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+      propertyPath: upgradeButton1
+      value: 
+      objectReference: {fileID: 897926703}
+    - target: {fileID: 2467145486191374175, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+      propertyPath: upgradeButton2
+      value: 
+      objectReference: {fileID: 897926702}
+    - target: {fileID: 2467145486191374175, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
       propertyPath: playerInventory
       value: 
       objectReference: {fileID: 1273358113}
@@ -500,6 +508,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &897926700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1539945075668975236, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &897926701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1011589115122529811, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &897926702 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8854342337165722576, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &897926703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9064751016588663834, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1273358112
@@ -583,6 +629,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 897926699}
     - target: {fileID: 4168208283306717262, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: upgradePanel
+      value: 
+      objectReference: {fileID: 897926701}
+    - target: {fileID: 4168208283306717262, guid: a3f0644eb6034234e889272bb924a894, type: 3}
       propertyPath: resourceImage
       value: 
       objectReference: {fileID: 526156875}
@@ -590,6 +640,10 @@ PrefabInstance:
       propertyPath: upgradeManager
       value: 
       objectReference: {fileID: 897926698}
+    - target: {fileID: 4168208283306717262, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: upgradeCostText
+      value: 
+      objectReference: {fileID: 897926700}
     - target: {fileID: 4289315207649067903, guid: a3f0644eb6034234e889272bb924a894, type: 3}
       propertyPath: healthBar
       value: 
