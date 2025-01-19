@@ -12,6 +12,7 @@ public class WaveManager : MonoBehaviour
 
     public int currentWave = 1; // Jelenlegi hullám száma
     public int activeEnemies = 1; //testpályán egy
+    public float szorzo = 1.1f;
 
     public List<WaveConfig> Waves; // Hullámok listája (ScriptableObject-ek)
  
@@ -70,10 +71,6 @@ public class WaveManager : MonoBehaviour
         Debug.Log($"Kill confirmed!");
     }
 
-
-    //Spanw enemy in circle átalakítva a Wave-hez
-
-  
     // 1: A játékos camerán kívûl egy körgyürûben
     public float spawnMinDistance = 50f; // Minimum távolság a kamerától
     public float spawnMaxDistance = 60f; // Maximum távolság a kamerától
@@ -94,7 +91,20 @@ public class WaveManager : MonoBehaviour
         );
 
         // Ellenség létrehozása a generált pozícióban
-        Instantiate(enemyprefab, spawnPosition, Quaternion.identity);
+        GameObject newenemy = Instantiate(enemyprefab, spawnPosition, Quaternion.identity);
+        MakeEnemyStronger(newenemy,szorzo);
+    }
+
+    public void MakeEnemyStronger(GameObject enemy, float szorzó)
+    {
+        Enemyship enemyship = enemy.GetComponent<Enemyship>();
+        if (enemyship)
+        {
+            enemyship.maxHealth *= szorzó;
+            enemyship.damage *= szorzó;
+            enemyship.maxHealth *= szorzó;
+            enemyship.maxHealth *= szorzó;
+        }
     }
 }
 

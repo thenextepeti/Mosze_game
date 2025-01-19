@@ -4,8 +4,8 @@ public class Asteroid : MonoBehaviour
 {
     public GameObject nyersanyagPrefab;  // Resource prefab to spawn on destruction
     public GameObject explosionPrefab;  // Explosion effect prefab
-    public int maxHealth = 50;          // Maximum health of the asteroid
-    private int currentHealth;          // Current health of the asteroid
+    public float maxHealth = 50;          // Maximum health of the asteroid
+    private float currentHealth;          // Current health of the asteroid
 
     void Awake()
     {
@@ -13,7 +13,7 @@ public class Asteroid : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         // Reduce health
         currentHealth -= damage;
