@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
   playerInventory: {fileID: 0}
+  upgradeButton1: {fileID: 0}
+  upgradeButton2: {fileID: 0}
+  upgradeCost: 20
   maxHPText: {fileID: 284298292736794382}
   maxHPSlider: {fileID: 8551419487426082371}
   upgradeMaxHPButton: {fileID: 2623383862595909133}
@@ -114,6 +117,14 @@ PrefabInstance:
     - target: {fileID: 5192336079676817214, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487716413813418581, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487716413813418581, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -700
       objectReference: {fileID: 0}
     - target: {fileID: 6422877704611101299, guid: 3d9d0fd697ad67f46948d9699637bc8a, type: 3}
       propertyPath: m_AnchorMax.y
