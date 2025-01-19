@@ -8,14 +8,18 @@ public class WaveManager : MonoBehaviour
 {
     public float timebetweenWaves = 20; // Szünet két hullám között
     public float remainingTime = 0; // Szünet két hullám között
-    public float WaveLengt = 20f;
-
+    public int totalwaves;
     public int currentWave = 1; // Jelenlegi hullám száma
     public int activeEnemies = 1; //testpályán egy
-    public float szorzo = 1.1f;
+    public float szorzo = 1f;
 
     public List<WaveConfig> Waves; // Hullámok listája (ScriptableObject-ek)
- 
+
+    private void Start()
+    {
+        totalwaves = Waves.Count;
+    }
+
     public void Startwave()
     {
         StartCoroutine(WavesStart());
@@ -23,8 +27,18 @@ public class WaveManager : MonoBehaviour
     IEnumerator WavesStart()
     {
         {
-            while (currentWave < 2)
+            while (currentWave < totalwaves)
             {
+                // 20 másodperc szünet a következõ hullám elõtt
+                //yield return new WaitForSeconds(timebetweenWaves);
+                remainingTime = timebetweenWaves;
+                while (remainingTime > 0)
+                {
+                    remainingTime -= Time.deltaTime; // Idõ csökkentése
+                    yield return null; // Vár egy frame-et
+                }
+                
+
                 Debug.Log($"Hullám {currentWave} elkezdõdött!");
                 // Indítsd el a hullámot
                 yield return StartCoroutine(SpawnWave());
@@ -37,14 +51,8 @@ public class WaveManager : MonoBehaviour
 
                 Debug.Log($"Hullám {currentWave} véget ért!");
                 Debug.Log($"Következõ Hullám {timebetweenWaves}s múlva kezdõdik !");
-                // 20 másodperc szünet a következõ hullám elõtt
-                //yield return new WaitForSeconds(timebetweenWaves);
-                remainingTime = timebetweenWaves;
-                while (remainingTime > 0)
-                {
-                    remainingTime -= Time.deltaTime; // Idõ csökkentése
-                    yield return null; // Vár egy frame-et
-                }
+
+                szorzo += 0.1f;
                 currentWave++;
             }
             Debug.Log("Az összes hullám befejezõdött!");
