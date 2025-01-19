@@ -35,7 +35,7 @@ public class CameraFollow : MonoBehaviour
             Vector3 targetPosition = new Vector3(clampedX, clampedY, -10f);
             transform.position = targetPosition;
         }
-        else
+        else if(GameObject.FindWithTag("Player"))
         {
             target = GameObject.FindWithTag("Player").transform;
         }
