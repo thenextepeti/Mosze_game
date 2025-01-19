@@ -153,6 +153,8 @@ MonoBehaviour:
   bulletSpeed: 50
   playerDamage: 10
   shootsound: {fileID: 8300000, guid: 1244df6b0b43c3d408b7e2ee0bb4c217, type: 3}
+  increaseDamageButton: {fileID: 0}
+  increaseSpeedButton: {fileID: 0}
 --- !u!60 &3870718998187285115
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -319,6 +321,8 @@ MonoBehaviour:
   currentHealth: 0
   collisionDamage: 10
   healthRegenRate: 2
+  increaseMaxHealthButton: {fileID: 0}
+  increaseHealthRegenButton: {fileID: 0}
 --- !u!114 &2582215825701410256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +340,8 @@ MonoBehaviour:
   energyCostPerShot: 10
   energyRegenRate: 10
   energyBarImage: {fileID: 0}
+  increaseMaxEnergyButton: {fileID: 0}
+  increaseEnergyRegenButton: {fileID: 0}
 --- !u!114 &1936447285074045784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,6 +379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 028dfb9429ad1cf4ca141eaa04771255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceImage: {fileID: 0}
+  maxResources: 20
   collectedResources: 0
   resourceText: {fileID: 0}
   upgradeManager: {fileID: 0}
