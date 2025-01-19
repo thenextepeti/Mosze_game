@@ -32,7 +32,7 @@ public class AiGun : MonoBehaviour
             Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
             rb.velocity = firePoint.up * bulletSpeed;
 
-            // Pass the player's damage value to the bullet
+            // Pass the own's damage value to the bullet
             EnemyBullet enemyBullet = Bullet.GetComponent<EnemyBullet>();
             enemyBullet.damage = damage;
 

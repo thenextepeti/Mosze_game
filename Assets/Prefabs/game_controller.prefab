@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1206613453492307668}
   - component: {fileID: 4479680568870556994}
-  - component: {fileID: 5792739106679305784}
   - component: {fileID: 4872363574610630651}
   m_Layer: 0
   m_Name: game_controller
@@ -52,22 +51,6 @@ MonoBehaviour:
   GenReady:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5792739106679305784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294080340364872674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1273eb9dc2db9d4ab96153e0f622a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 2822854687298782902, guid: a685147d237facb4997c1aa1afc32241, type: 3}
-  spawnMinDistance: 50
-  spawnMaxDistance: 60
-  center: {fileID: 0}
 --- !u!114 &4872363574610630651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,9 +65,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timebetweenWaves: 30
   remainingTime: 0
-  WaveLengt: 20
+  totalwaves: 0
   currentWave: 0
   activeEnemies: 2
+  szorzo: 1
   Waves:
   - {fileID: 11400000, guid: 67305e10047e6f94e9f8b425dfb6761c, type: 2}
   spawnMinDistance: 50
