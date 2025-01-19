@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (player != null)
         {
-            MoweTowradsPlayer();
+            MoweTowardsPlayer();
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
             if (distanceToPlayer <= shootingDistance)
             {
@@ -34,7 +34,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void MoweTowradsPlayer()
+    private void MoweTowardsPlayer()
     {
         if (mozgások != null)
         {
