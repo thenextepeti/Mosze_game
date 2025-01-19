@@ -261,6 +261,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b18e686379dd354bad852b4553218c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smallCannonsport:
+  - {fileID: 6994238311979011912}
+  - {fileID: 9128923662424799177}
+  largeCannonport: {fileID: 8735720893817248052}
+  smallCannonProjectile: {fileID: 7542079746814096266, guid: f07aa08d31fdc1443b8f31fdd6936b95, type: 3}
+  largeCannonProjectile: {fileID: 7542079746814096266, guid: 3fa95d225bab9fb4e9f50207d81f2bac, type: 3}
+  smallProjectileSpeed: 50
+  largeProjectileSpeed: 50
+  smallProjectileDamage: 10
+  largeProjectileDamage: 30
+  smallCannonFireRate: 0.5
+  largeCannonFireRate: 1.5
 --- !u!114 &7829029613815522248
 MonoBehaviour:
   m_ObjectHideFlags: 0
