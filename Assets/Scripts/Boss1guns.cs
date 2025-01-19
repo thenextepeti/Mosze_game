@@ -34,7 +34,7 @@ public class Boss1guns : MonoBehaviour
     void Update()
     {
         SmallCannon();
-        largeCannon();
+        LargeCannon();
     }
 
     public void SmallCannon()
@@ -54,10 +54,11 @@ public class Boss1guns : MonoBehaviour
             // Pass the own damage value to the bullet
             Projectile.GetComponent<EnemyBullet>().damage = smallProjectileDamage;
             smallCannonTimer = Time.time + smallCannonFireRate;
+            Destroy(Projectile, 2f);
         }
     }
 
-    public void largeCannon()
+    public void LargeCannon()
     {
         if (Time.time >= largeCannonTimer)
         {
@@ -65,15 +66,16 @@ public class Boss1guns : MonoBehaviour
             GameObject Projectile = Instantiate(largeCannonProjectile, largeCannonport.position, largeCannonport.rotation);
 
             // The firing GameObject becomes the bullet's "shooter"
-            Projectile.GetComponent<EnemyBullet>().shooter = gameObject;
+            Projectile.GetComponent<EnemyRocket>().shooter = gameObject;
 
             // Set the bullet velocity
             Rigidbody2D rb = Projectile.GetComponent<Rigidbody2D>();
             rb.velocity = largeCannonport.up * largeProjectileSpeed;
 
             // Pass the own damage value to the bullet
-            Projectile.GetComponent<EnemyBullet>().damage = largeProjectileDamage;
+            Projectile.GetComponent<EnemyRocket>().damage = largeProjectileDamage;
             largeCannonTimer = Time.time + largeCannonFireRate;
+            Destroy(Projectile, 10f);
         }
     }
 }

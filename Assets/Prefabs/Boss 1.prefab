@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2321252210951346252}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.022, y: 0.84, z: 0}
+  m_LocalPosition: {x: -0.022, y: 0.916, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 4433482849507169688}
   - component: {fileID: 4478514707215952473}
   - component: {fileID: 7829029613815522248}
+  - component: {fileID: 2248063572012264422}
   m_Layer: 6
   m_Name: Boss 1
   m_TagString: Enemy
@@ -283,6 +284,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4665c8bf9d64149ad67f5a3af06b1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  "mozg\xE1sok": {fileID: 0}
+  AiGun: {fileID: 0}
+  shootingDistance: 5
+--- !u!114 &2248063572012264422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822854687298782902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b625e66fed29064793977a272a4b983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5682091644415763515

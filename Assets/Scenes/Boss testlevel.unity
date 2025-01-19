@@ -185,6 +185,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7592756799435216243, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829029613815522248, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+      propertyPath: Guns
+      value: 
+      objectReference: {fileID: 2014349451}
+    - target: {fileID: 7829029613815522248, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+      propertyPath: "mozg\xE1sok"
+      value: 
+      objectReference: {fileID: 2014349452}
+    - target: {fileID: 7829029613815522248, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+      propertyPath: chaseDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829029613815522248, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+      propertyPath: shootingDistance
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -807,6 +827,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e40f46dea707547489c9f75474e4b627, type: 3}
+--- !u!114 &2014349451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4478514707215952473, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+  m_PrefabInstance: {fileID: 46498861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b18e686379dd354bad852b4553218c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2014349452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4433482849507169688, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+  m_PrefabInstance: {fileID: 46498861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a077794c8a6ee478fd187c711ee1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
