@@ -291,6 +291,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 223186128100735209, guid: cdc983a36955ad1489eaf08ba9ec0730, type: 3}
   m_PrefabInstance: {fileID: 443430741}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &684004214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5349479862245613767, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &742213650
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +370,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &752872202 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8903362662653019892, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &897926697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -594,10 +616,26 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 9401641}
+    - target: {fileID: 4289315207649067903, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: increaseMaxHealthButton
+      value: 
+      objectReference: {fileID: 1523539069}
+    - target: {fileID: 4289315207649067903, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: increaseHealthRegenButton
+      value: 
+      objectReference: {fileID: 752872202}
     - target: {fileID: 7932328061417051534, guid: a3f0644eb6034234e889272bb924a894, type: 3}
       propertyPath: shootsound
       value: 
       objectReference: {fileID: 8300000, guid: 1244df6b0b43c3d408b7e2ee0bb4c217, type: 3}
+    - target: {fileID: 7932328061417051534, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: increaseSpeedButton
+      value: 
+      objectReference: {fileID: 1972229987}
+    - target: {fileID: 7932328061417051534, guid: a3f0644eb6034234e889272bb924a894, type: 3}
+      propertyPath: increaseDamageButton
+      value: 
+      objectReference: {fileID: 684004214}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -803,6 +841,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77827a67570c7fc49be8f56ecbf09e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1523539069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2623383862595909133, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1578204016
@@ -1047,6 +1096,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e40f46dea707547489c9f75474e4b627, type: 3}
+--- !u!114 &1972229987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5321847955060436164, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+  m_PrefabInstance: {fileID: 897926697}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
