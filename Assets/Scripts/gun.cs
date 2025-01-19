@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;      // Reference to the bullet prefab
     public Transform firePoint;          // The point where bullets are fired from
     public float bulletSpeed = 50;      // Speed of the bullet
-    public int playerDamage = 5;         // Amount of damage the player does
+    public float playerDamage = 5;         // Amount of damage the player does
     public AudioClip shootsound; // A hangfájl
     private AudioSource audioSource;
     // Buttons for upgrading playerDamage and bulletSpeed

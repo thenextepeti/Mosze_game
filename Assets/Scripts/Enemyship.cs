@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Enemyship : MonoBehaviour
 {
     // az életerõ höz szükséges dolgok
-    public int maxHealth = 30; // Maximum health of the enemy
-    private int currentHealth;
+    public double maxHealth = 30; // Maximum health of the enemy
+    private double currentHealth;
     //halál event ami szól a game manager-nek
     public UnityEvent Enemydeath;
 
@@ -18,10 +18,11 @@ public class Enemyship : MonoBehaviour
     public float Forgás = 30f;
 
     //lövéshez szükséges adatok
-    public int bulletSpeed = 50;
+    public float bulletSpeed = 50;
     public float fireRate = 0.5f;
+    public float damage = 10;
 
-    void Awake()
+    void Start()
     {
         // Set the initial health to the maximum health
         currentHealth = maxHealth;
@@ -30,7 +31,7 @@ public class Enemyship : MonoBehaviour
         Enemydeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().activeEnemyDeath);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         // Reduce health
         currentHealth -= damage;

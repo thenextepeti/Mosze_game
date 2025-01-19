@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    public int damage = 1; // Amount of damage the bullet deals
+    public float damage = 1; // Amount of damage the bullet deals
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
