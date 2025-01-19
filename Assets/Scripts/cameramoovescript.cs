@@ -26,13 +26,18 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (target != null) 
+
+        if (target)
         {
             float clampedX = Mathf.Clamp(target.position.x, minX, maxX);
             float clampedY = Mathf.Clamp(target.position.y, minY, maxY);
 
             Vector3 targetPosition = new Vector3(clampedX, clampedY, -10f);
             transform.position = targetPosition;
+        }
+        else
+        {
+            target = GameObject.FindWithTag("Player").transform;
         }
     }
 }
