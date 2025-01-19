@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour
 
     public List<WaveConfig> Waves; // Hullámok listája (ScriptableObject-ek)
 
-    private void Start()
+    private void Awake()
     {
         totalwaves = Waves.Count;
     }
