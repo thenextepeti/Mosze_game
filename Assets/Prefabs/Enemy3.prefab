@@ -237,7 +237,7 @@ MonoBehaviour:
   player: {fileID: 0}
   "mozg\xE1sok": {fileID: 4433482849507169688}
   AiGun: {fileID: -1080063401907579684}
-  shootingDistance: 30
+  shootingDistance: 40
   playerposition: {x: 0, y: 0}
 --- !u!1 &7939850879666982221
 GameObject:
