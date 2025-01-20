@@ -73,7 +73,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    public void activeEnemyDeath()
+    public void ActiveEnemyDeath()
     {
         activeEnemies--;
         Debug.Log($"Kill confirmed!");

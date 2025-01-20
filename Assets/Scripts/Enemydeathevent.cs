@@ -9,7 +9,7 @@ public class Enemydeathevent : MonoBehaviour
 
     void Start()
     {
-        EnemyDeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().activeEnemyDeath);
+        EnemyDeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().ActiveEnemyDeath);
     }
     void OnDestroy()
     {
