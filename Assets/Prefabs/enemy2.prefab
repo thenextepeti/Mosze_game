@@ -222,7 +222,7 @@ MonoBehaviour:
   "Forg\xE1s": 40
   bulletSpeed: 50
   fireRate: 0.5
-  damage: 15
+  damage: 13
 --- !u!114 &-1080063401907579684
 MonoBehaviour:
   m_ObjectHideFlags: 0
