@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66d191d22efde2d45ae9371beb4ddacf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 15
-  MaxSpeed: 20
-  Lasulas: 0.99
+  Force: 20
+  MaxSpeed: 25
+  Lasulas: 0.985
 --- !u!114 &7932328061417051534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  maxHealth: 100
+  maxHealth: 80
   currentHealth: 0
   collisionDamage: 10
   healthRegenRate: 2
@@ -337,8 +337,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEnergy: 100
   currentEnergy: 0
-  energyCostPerShot: 10
-  energyRegenRate: 10
+  energyCostPerShot: 15
+  energyRegenRate: 20
   energyBarImage: {fileID: 0}
   increaseMaxEnergyButton: {fileID: 0}
   increaseEnergyRegenButton: {fileID: 0}
@@ -360,7 +360,7 @@ MonoBehaviour:
   energyRegen: 1
   damage: 10
   attackSpeed: 1
-  maxUpgradeLevel: 5
+  maxUpgradeLevel: 10
   currentHPUpgradeLevel: 0
   currentRegenUpgradeLevel: 0
   currentEnergyUpgradeLevel: 0
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceImage: {fileID: 0}
-  maxResources: 20
+  maxResources: 100
   collectedResources: 0
   resourceText: {fileID: 0}
   upgradeManager: {fileID: 0}

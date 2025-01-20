@@ -10,7 +10,7 @@ public class Healthscript : MonoBehaviour
     public float maxHealth = 100f;    // Maximum health
     public float currentHealth;       // Current health
     public float collisionDamage = 10f; // Damage taken on collision
-    public float healthRegenRate = 2f;  // Percentage of max health regenerated per second
+    public float healthRegenRate = 5f;  // Percentage of max health regenerated per second
 
     // Buttons for upgrading max health and health regen rate
     public Button increaseMaxHealthButton; // Button to increase max health
@@ -42,15 +42,6 @@ public class Healthscript : MonoBehaviour
         // Passive health regeneration
         RegenerateHealth();
 
-        // Debug controls for testing damage and healing
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            Takedamage(20);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Heal(5);
-        }
     }
 
     public void Takedamage(float damage)
@@ -72,15 +63,17 @@ public class Healthscript : MonoBehaviour
         UpdateHealthBar();
     }
 
+
     private void RegenerateHealth()
     {
-        // Regenerate health over time based on the health regen rate
-        float regenAmount = (healthRegenRate / 100f) * maxHealth * Time.deltaTime;
+        // Regenerate a fixed amount of health per second
+        float regenAmount = healthRegenRate * Time.deltaTime; // Fixed amount of health regenerated per second
         currentHealth += regenAmount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth); // Prevent overhealing
 
         UpdateHealthBar();
     }
+
 
     private void UpdateHealthBar()
     {
@@ -101,21 +94,55 @@ public class Healthscript : MonoBehaviour
         Playerdeath?.Invoke();
         Destroy(gameObject);
     }
+    private float collisionCooldown = 1f; // Cooldown duration in seconds
+    private Dictionary<GameObject, float> collisionTimers = new Dictionary<GameObject, float>(); // Tracks last collision time per object
+    private float minCollisionSpeed = 10f; // Minimum speed required to take damage
+    private float maxCollisionSpeed = 25f; // Speed at which maximum damage is taken
+    private float minDamage = 5f; // Minimum damage at minimum collision speed
+    private float maxDamage = 15f; // Maximum damage at maximum collision speed
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Ensure the object collided has the tag "Enemy" or "Aszteroida"
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("aszteroida"))
+        GameObject collidedObject = collision.gameObject;
+
+        // Calculate the relative speed of the collision
+        float relativeSpeed = collision.relativeVelocity.magnitude;
+
+        // Check if the relative speed meets the minimum requirement
+        if (relativeSpeed >= minCollisionSpeed)
         {
-            Debug.Log($"{gameObject.name} collided with {collision.gameObject.name} and took damage!");
-            Takedamage(collisionDamage);
+            // Check if enough time has passed for this specific object
+            if (!collisionTimers.ContainsKey(collidedObject) || Time.time - collisionTimers[collidedObject] >= collisionCooldown)
+            {
+                // Ensure the object collided has the tag "Enemy" or "Aszteroida"
+                if (collidedObject.CompareTag("Enemy") || collidedObject.CompareTag("aszteroida"))
+                {
+                    // Calculate damage based on the relative speed
+                    float damage = Mathf.Lerp(minDamage, maxDamage, (relativeSpeed - minCollisionSpeed) / (maxCollisionSpeed - minCollisionSpeed));
+                    damage = Mathf.Clamp(damage, minDamage, maxDamage); // Ensure damage stays within range
+
+                    Debug.Log($"{gameObject.name} collided with {collidedObject.name} at speed {relativeSpeed} and took {damage} damage!");
+                    Takedamage(damage);
+
+                    // Update the last collision time for this object
+                    collisionTimers[collidedObject] = Time.time;
+                }
+            }
+        }
+        else
+        {
+            Debug.Log($"{gameObject.name} collided with {collidedObject.name}, but the speed {relativeSpeed} was too low to cause damage.");
         }
     }
+
+
+
+
 
     // Method to increase max health by 10%
     private void IncreaseMaxHealth()
     {
-        maxHealth *= 1.1f; // Increase max health by 10%
+        maxHealth *= 1.2f; // Increase max health by 10%
 
         // Ensure current health does not exceed the new max health
         currentHealth = Mathf.Min(currentHealth, maxHealth);
@@ -127,7 +154,7 @@ public class Healthscript : MonoBehaviour
     // Method to increase health regen rate by 10%
     private void IncreaseHealthRegen()
     {
-        healthRegenRate *= 1.1f; // Increase health regen rate by 10%
+        healthRegenRate *= 1.2f; // Increase health regen rate by 10%
 
         // Health will regenerate faster, which is already handled in the Update method
     }

@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfc2175209d0a349bff24199b352ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 50
   Enemydeath:
     m_PersistentCalls:
       m_Calls: []
@@ -220,6 +220,9 @@ MonoBehaviour:
   MaxSpeed: 20
   Lasulas: 0.99
   "Forg\xE1s": 30
+  bulletSpeed: 50
+  fireRate: 0.5
+  damage: 10
 --- !u!114 &-3992486219583105060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,10 +235,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bbcac3a56187641bd76ba31bbf1afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyship: {fileID: 0}
   bulletPrefab: {fileID: 7542079746814096266, guid: f07aa08d31fdc1443b8f31fdd6936b95, type: 3}
   firePoint: {fileID: 6994238311979011912}
-  bulletSpeed: 50
-  fireRate: 0.5
 --- !u!1 &7939850879666982221
 GameObject:
   m_ObjectHideFlags: 0
