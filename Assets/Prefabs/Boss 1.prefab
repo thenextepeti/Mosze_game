@@ -197,21 +197,48 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.79835016, y: -0.49403048}
-      - {x: 1.037196, y: -0.4063455}
+      - {x: 0.9460059, y: -0.4349741}
+      - {x: 1.14829, y: -0.68143725}
+      - {x: 1.1484138, y: -0.60712236}
       - {x: 0.76570255, y: 0.037743926}
       - {x: 0.58681214, y: 0.4834561}
+      - {x: 0.4043696, y: 1.2177862}
+      - {x: 0.4029548, y: 0.9544122}
+      - {x: 0.31369662, y: 0.9901784}
       - {x: 0.14631775, y: 0.4139195}
       - {x: 0.09790341, y: 0.8775231}
       - {x: -0.15584864, y: 0.88097453}
       - {x: -0.19916028, y: 0.40822217}
+      - {x: -0.3662716, y: 0.96400607}
+      - {x: -0.4530411, y: 0.97205585}
+      - {x: -0.45188338, y: 1.2695061}
       - {x: -0.6582169, y: 0.43822423}
       - {x: -0.8154119, y: 0.031050228}
-      - {x: -1.0402114, y: -0.33534056}
+      - {x: -1.2539624, y: -0.70103496}
       - {x: -0.8370527, y: -0.49697644}
-      - {x: -0.92338413, y: -0.6487933}
+      - {x: -1.239655, y: -1.2947931}
+      - {x: -0.7816679, y: -0.6689646}
+      - {x: -0.5950844, y: -0.8567045}
+      - {x: -0.7322924, y: -1.1405263}
+      - {x: -0.679136, y: -1.254613}
+      - {x: -0.5043127, y: -0.8766548}
       - {x: -0.373999, y: -0.9508145}
-      - {x: 0.32316408, y: -0.9498307}
+      - {x: -0.3958422, y: -1.1392226}
+      - {x: -0.3422381, y: -1.1839871}
+      - {x: -0.21625957, y: -1.1656117}
+      - {x: -0.17125785, y: -0.9190363}
+      - {x: 0.10644017, y: -0.8812277}
+      - {x: 0.22564265, y: -1.1879935}
+      - {x: 0.32765025, y: -1.1561918}
+      - {x: 0.26983535, y: -0.8700632}
+      - {x: 0.35156864, y: -0.8547996}
+      - {x: 0.6104007, y: -1.1846768}
+      - {x: 0.6828224, y: -1.1351844}
+      - {x: 0.5419677, y: -0.7943947}
       - {x: 0.679922, y: -0.7346439}
+      - {x: 0.814169, y: -0.67448366}
+      - {x: 1.1093006, y: -1.1767486}
+      - {x: 1.181339, y: -1.1608318}
       - {x: 0.89372706, y: -0.63946146}
   m_UseDelaunayMesh: 0
 --- !u!114 &7592756799435216243
@@ -226,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfc2175209d0a349bff24199b352ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 200
+  maxHealth: 150
   Enemydeath:
     m_PersistentCalls:
       m_Calls: []
@@ -269,11 +296,11 @@ MonoBehaviour:
   smallCannonProjectile: {fileID: 7542079746814096266, guid: f07aa08d31fdc1443b8f31fdd6936b95, type: 3}
   largeCannonProjectile: {fileID: 7542079746814096266, guid: 3fa95d225bab9fb4e9f50207d81f2bac, type: 3}
   smallProjectileSpeed: 50
-  largeProjectileSpeed: 50
+  largeProjectileSpeed: 80
   smallProjectileDamage: 15
   largeProjectileDamage: 50
   smallCannonFireRate: 0.5
-  largeCannonFireRate: 1.5
+  largeCannonFireRate: 5
 --- !u!114 &7829029613815522248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +355,7 @@ Transform:
   m_GameObject: {fileID: 5682091644415763515}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.392, y: 0.422, z: 0}
+  m_LocalPosition: {x: 0.392, y: 0.642, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,7 +386,7 @@ Transform:
   m_GameObject: {fileID: 7939850879666982221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.452, y: 0.422, z: 0}
+  m_LocalPosition: {x: -0.452, y: 0.678, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
