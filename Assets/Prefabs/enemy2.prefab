@@ -219,7 +219,7 @@ MonoBehaviour:
   Force: 15
   MaxSpeed: 20
   Lasulas: 0.99
-  "Forg\xE1s": 40
+  "Forg\xE1s": 60
   bulletSpeed: 50
   fireRate: 0.5
   damage: 11
