@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: level2_wave5
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 2822854687298782902, guid: e0380d709deab0b4fa40fdb1c5e39ee9, type: 3}
-  - {fileID: 2822854687298782902, guid: e0380d709deab0b4fa40fdb1c5e39ee9, type: 3}
-  - {fileID: 2822854687298782902, guid: e0380d709deab0b4fa40fdb1c5e39ee9, type: 3}
-  - {fileID: 2822854687298782902, guid: edfdc9d8abd2108489ea6723287a0215, type: 3}
+  - {fileID: 2822854687298782902, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+  - {fileID: 2822854687298782902, guid: a685147d237facb4997c1aa1afc32241, type: 3}
+  - {fileID: 2822854687298782902, guid: 583fe6a4001c9d140bf3863d8c659fc8, type: 3}
