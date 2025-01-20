@@ -52,7 +52,7 @@ public class WaveManager : MonoBehaviour
                 Debug.Log($"Hullám {currentWave} véget ért!");
                 Debug.Log($"Következõ Hullám {timebetweenWaves}s múlva kezdõdik !");
 
-                szorzo += 0.1f;
+                szorzo += 0.2f;
                 currentWave++;
             }
             Debug.Log("Az összes hullám befejezõdött!");
@@ -110,8 +110,6 @@ public class WaveManager : MonoBehaviour
         {
             enemyship.maxHealth *= szorzó;
             enemyship.damage *= szorzó;
-            enemyship.maxHealth *= szorzó;
-            enemyship.maxHealth *= szorzó;
         }
     }
 }
