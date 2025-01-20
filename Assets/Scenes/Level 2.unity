@@ -403,12 +403,16 @@ PrefabInstance:
       value: 356
       objectReference: {fileID: 0}
     - target: {fileID: 7058736899119272144, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058736899119272144, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -962.2064
+      value: 108.343
       objectReference: {fileID: 0}
     - target: {fileID: 7058736899119272144, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -481.0972
+      value: 54.17749
       objectReference: {fileID: 0}
     - target: {fileID: 7154412081418288834, guid: d33a1b8ff54b34447837e075f7c5c27d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -792,6 +796,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 576070654}
     - target: {fileID: 4479680568870556994, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: asteroidCount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4479680568870556994, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: GenReady.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -837,28 +845,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: Waves.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: timebetweenWaves
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: Waves.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 97bf55dbba6b1e144b38577ec1e46f09, type: 2}
+      objectReference: {fileID: 11400000, guid: c7a98aafe9cbdf84a8c37fbb20972a9d, type: 2}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: Waves.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: eedb24d4f686ac54c9a46a2e25cba5ec, type: 2}
+      objectReference: {fileID: 11400000, guid: 89ee7cb1b1203004bb896f5e0dba0939, type: 2}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: Waves.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 5dfc6ebbd9002a448998d6fc155f2bbc, type: 2}
+      objectReference: {fileID: 11400000, guid: 4405cd09086b90449b356a7789c38628, type: 2}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: Waves.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 9a446b770b817284dbe2f6c501979573, type: 2}
+      objectReference: {fileID: 11400000, guid: 5080c1373fb32f546a80b89445870155, type: 2}
+    - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
+      propertyPath: Waves.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: ea458db0b99645642acb0d452e095e2b, type: 2}
     - target: {fileID: 5792739106679305784, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: center
       value: 
