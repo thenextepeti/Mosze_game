@@ -205,7 +205,7 @@ MonoBehaviour:
   Lasulas: 0.99
   "Forg\xE1s": 60
   bulletSpeed: 50
-  fireRate: 0.25
+  fireRate: 0.33
   damage: 13
 --- !u!114 &-1080063401907579684
 MonoBehaviour:
