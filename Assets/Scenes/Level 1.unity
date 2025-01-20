@@ -853,7 +853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: currentWave
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4872363574610630651, guid: cdda90e6cb4f675458ae0cea2fecf648, type: 3}
       propertyPath: enemyPrefab
