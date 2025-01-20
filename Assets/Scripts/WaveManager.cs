@@ -26,7 +26,7 @@ public class WaveManager : MonoBehaviour
     }
     IEnumerator WavesStart()
     {
-        {
+        
             while (currentWave < totalwaves)
             {
                 // 20 másodperc szünet a következõ hullám elõtt
@@ -56,7 +56,9 @@ public class WaveManager : MonoBehaviour
                 currentWave++;
             }
             Debug.Log("Az összes hullám befejezõdött!");
-        }
+        
+        // Victory screen/next levels unlock    
+        
     }
 
     private IEnumerator SpawnWave()
