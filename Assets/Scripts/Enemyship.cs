@@ -5,19 +5,19 @@ using UnityEngine.Events;
 
 public class Enemyship : MonoBehaviour
 {
-    // az életerõ höz szükséges dolgok
+    // az Ã©leterÃµ hÃ¶z szÃ¼ksÃ©ges dolgok
     public double maxHealth = 30; // Maximum health of the enemy
     private double currentHealth;
-    //halál event ami szól a game manager-nek
+    //halÃ¡l event ami szÃ³l a game manager-nek
     public UnityEvent Enemydeath;
 
-    //mozgáshoz szükséges adatok
+    //mozgÃ¡shoz szÃ¼ksÃ©ges adatok
     public float Force = 15f;
     public float MaxSpeed = 20f;
     public float Lasulas = 0.99f;
-    public float Forgás = 30f;
+    public float ForgÃ¡s = 30f;
 
-    //lövéshez szükséges adatok
+    //lÃ¶vÃ©shez szÃ¼ksÃ©ges adatok
     public float bulletSpeed = 50;
     public float fireRate = 0.5f;
     public float damage = 10;
@@ -27,9 +27,10 @@ public class Enemyship : MonoBehaviour
         // Set the initial health to the maximum health
         currentHealth = maxHealth;
 
-        // feliratkozás a halál eseményre
-        Enemydeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().activeEnemyDeath);
-    }
+        // feliratkozÃ¡s a halÃ¡l esemÃ©nyre
+
+        Enemydeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().ActiveEnemyDeath);
+
 
     public void TakeDamage(float damage)
     {
