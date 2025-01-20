@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1206613453492307668}
   - component: {fileID: 4479680568870556994}
   - component: {fileID: 4872363574610630651}
+  - component: {fileID: 8673471007817044215}
   m_Layer: 0
   m_Name: game_controller
   m_TagString: Untagged
@@ -74,3 +75,18 @@ MonoBehaviour:
   spawnMinDistance: 50
   spawnMaxDistance: 60
   center: {fileID: 0}
+--- !u!114 &8673471007817044215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294080340364872674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2489b393666337b42b36f3dec1705e44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  Vscreen: {fileID: 645625761091255327, guid: c6e2c6f588019a341b50878171837619, type: 3}
+  Lscreen: {fileID: 645625761091255327, guid: 7bcd079498b7451479060385977733f2, type: 3}
