@@ -317,12 +317,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  maxHealth: 80
+  maxHealth: 100
   currentHealth: 0
   collisionDamage: 10
-  healthRegenRate: 2
+  healthRegenRate: 3
   increaseMaxHealthButton: {fileID: 0}
   increaseHealthRegenButton: {fileID: 0}
+  Playerdeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2582215825701410256
 MonoBehaviour:
   m_ObjectHideFlags: 0
