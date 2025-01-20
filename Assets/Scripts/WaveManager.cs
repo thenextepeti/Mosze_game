@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WaveManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class WaveManager : MonoBehaviour
     public float szorzo = 1f;
 
     public List<WaveConfig> Waves; // Hullámok listája (ScriptableObject-ek)
+    public UnityEvent levelcomplete;
 
     private void Awake()
     {
@@ -55,10 +57,8 @@ public class WaveManager : MonoBehaviour
                 szorzo += 0.2f;
                 currentWave++;
             }
-            Debug.Log("Az összes hullám befejezõdött!");
-        
-        // Victory screen/next levels unlock    
-        
+        Debug.Log("Az összes hullám befejezõdött!");
+        levelcomplete?.Invoke();
     }
 
     private IEnumerator SpawnWave()
