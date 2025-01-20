@@ -79,6 +79,11 @@ public class WaveManager : MonoBehaviour
         Debug.Log($"Kill confirmed!");
     }
 
+    public void PlayerDeath()
+    {
+        StopAllCoroutines();
+    }
+
     // 1: A játékos camerán kívûl egy körgyürûben
     public float spawnMinDistance = 50f; // Minimum távolság a kamerától
     public float spawnMaxDistance = 60f; // Maximum távolság a kamerától

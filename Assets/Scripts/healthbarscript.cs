@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Healthscript : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Healthscript : MonoBehaviour
     // Buttons for upgrading max health and health regen rate
     public Button increaseMaxHealthButton; // Button to increase max health
     public Button increaseHealthRegenButton; // Button to increase health regeneration rate
+
+    public UnityEvent Playerdeath; //játok halál event
 
     void Start()
     {
@@ -94,6 +97,7 @@ public class Healthscript : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} has died!");
         // Add death logic here (e.g., destroy the object, trigger animations, etc.)
+        Playerdeath?.Invoke();
         Destroy(gameObject);
     }
 
