@@ -316,7 +316,7 @@ MonoBehaviour:
   player: {fileID: 0}
   "mozg\xE1sok": {fileID: 0}
   Guns: {fileID: 0}
-  shootingDistance: 5
+  shootingDistance: 70
   chaseDistance: 20
 --- !u!114 &2248063572012264422
 MonoBehaviour:

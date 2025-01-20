@@ -33,7 +33,7 @@ public class Boss1guns : MonoBehaviour
     }
     void Update()
     {
-        LargeCannon();
+
     }
 
     public void SmallCannon()
