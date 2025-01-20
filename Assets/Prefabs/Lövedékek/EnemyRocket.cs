@@ -16,13 +16,12 @@ public class EnemyRocket : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (timer < Time.time) 
-        {
+      
             if (collision.gameObject == shooter)
             {
                 return; // Nem töröljük a golyót, ha a kilövõ objektummal ütközik
             }
-        }
+        
         // Ha az ütközõ objektum ugyanaz, mint a kilövõ, akkor nem töröljük
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
@@ -41,5 +40,6 @@ public class EnemyRocket : MonoBehaviour
 
         // Megsemmisítjük a golyót, ha ütközik valamivel, ami nem a kilövõ objektum
         Destroy(gameObject);
+        Debug.Log("a rakéta megsemmisült");
     }
 }

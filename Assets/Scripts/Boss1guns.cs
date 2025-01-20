@@ -33,7 +33,6 @@ public class Boss1guns : MonoBehaviour
     }
     void Update()
     {
-        SmallCannon();
         LargeCannon();
     }
 
@@ -76,6 +75,7 @@ public class Boss1guns : MonoBehaviour
             Projectile.GetComponent<EnemyRocket>().damage = largeProjectileDamage;
             largeCannonTimer = Time.time + largeCannonFireRate;
             Destroy(Projectile, 10f);
+            Debug.Log("rakéta kilőve");
         }
     }
 }
