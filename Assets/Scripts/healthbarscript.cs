@@ -35,6 +35,7 @@ public class Healthscript : MonoBehaviour
             increaseHealthRegenButton.onClick.AddListener(IncreaseHealthRegen);
         }
         Playerdeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().PlayerDeath);
+        Playerdeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<Endlevel>().LevelFailed);
     }
 
     void Update()
