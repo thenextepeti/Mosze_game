@@ -41,7 +41,7 @@ public class PlayerInventory : MonoBehaviour
             // Update the UI with current resources and max resources
             if (resourceText != null)
             {
-                resourceText.text = "Resource: " + collectedResources + " / " + maxResources;
+                resourceText.text = collectedResources + " / " + maxResources;
             }
 
             // Update the image fill amount to reflect the collected resources
