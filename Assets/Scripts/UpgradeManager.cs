@@ -231,7 +231,7 @@ public class UpgradeManager : MonoBehaviour
             playerCurrency >= CalculateUpgradeCost(playerStats.currentDamageUpgradeLevel);
 
         // Attack Speed upgrade
-        attackSpeedText.text = $"Attack Speed (Level {playerStats.currentAttackSpeedUpgradeLevel}/{playerStats.maxUpgradeLevel})";
+        attackSpeedText.text = $"Projectile speed (Level {playerStats.currentAttackSpeedUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         attackSpeedSlider.value = playerStats.currentAttackSpeedUpgradeLevel;
         attackSpeedSlider.maxValue = playerStats.maxUpgradeLevel;
         attackSpeedCostText.text = $"Cost: {CalculateUpgradeCost(playerStats.currentAttackSpeedUpgradeLevel)}";
