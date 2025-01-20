@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddfc2175209d0a349bff24199b352ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   Enemydeath:
     m_PersistentCalls:
       m_Calls: []
@@ -236,7 +236,7 @@ MonoBehaviour:
   "Forg\xE1s": 25
   bulletSpeed: 50
   fireRate: 0.5
-  damage: 10
+  damage: 15
 --- !u!114 &4433482849507169688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,8 +270,8 @@ MonoBehaviour:
   largeCannonProjectile: {fileID: 7542079746814096266, guid: 3fa95d225bab9fb4e9f50207d81f2bac, type: 3}
   smallProjectileSpeed: 50
   largeProjectileSpeed: 50
-  smallProjectileDamage: 10
-  largeProjectileDamage: 30
+  smallProjectileDamage: 15
+  largeProjectileDamage: 50
   smallCannonFireRate: 0.5
   largeCannonFireRate: 1.5
 --- !u!114 &7829029613815522248
@@ -288,8 +288,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   "mozg\xE1sok": {fileID: 0}
-  AiGun: {fileID: 0}
+  Guns: {fileID: 0}
   shootingDistance: 5
+  chaseDistance: 20
 --- !u!114 &2248063572012264422
 MonoBehaviour:
   m_ObjectHideFlags: 0

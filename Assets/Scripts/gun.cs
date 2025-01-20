@@ -79,12 +79,12 @@ public class Gun : MonoBehaviour
     }
     private void IncreasePlayerDamage()
     {
-        playerDamage = Mathf.RoundToInt(playerDamage * 1.1f); // Increase damage by 10%
+        playerDamage = Mathf.RoundToInt(playerDamage * 1.2f); // Increase damage by 20%
         Debug.Log($"Player Damage increased to: {playerDamage}");
-    }// Method to increase player damage by 10%
+    }// Method to increase player damage by 20%
     private void IncreaseBulletSpeed()
     {
-        bulletSpeed *= 1.1f; // Increase bullet speed by 10%
+        bulletSpeed *= 1.2f; // Increase bullet speed by 20%
         Debug.Log($"Bullet Speed increased to: {bulletSpeed}");
-    }// Method to increase bullet speed by 10%
+    }// Method to increase bullet speed by 20%
 }

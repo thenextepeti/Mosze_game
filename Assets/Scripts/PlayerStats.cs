@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
     public float damage = 10f;
     public float attackSpeed = 1f;
 
-    public int maxUpgradeLevel = 5; // Minden tulajdonság maximum szintje
+    public int maxUpgradeLevel = 10; // Minden tulajdonság maximum szintje
 
     // Fejlesztési szintek
     public int currentHPUpgradeLevel = 0;

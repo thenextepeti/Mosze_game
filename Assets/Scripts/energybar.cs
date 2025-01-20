@@ -67,20 +67,20 @@ public class EnergyBar : MonoBehaviour
     }
     private void IncreaseMaxEnergy()
     {
-        maxEnergy *= 1.1f; // Increase max energy by 10%
+        maxEnergy *= 1.2f; // Increase max energy by 20%
 
         // Ensure current energy does not exceed the new max energy
         currentEnergy = Mathf.Min(currentEnergy, maxEnergy);
 
         // Update energy bar
         UpdateEnergyBar();
-    }// Method to increase max energy by 10%
+    }// Method to increase max energy by 20%
     private void IncreaseEnergyRegen()
     {
-        energyRegenRate *= 1.1f; // Increase energy regen rate by 10%
+        energyRegenRate *= 1.2f; // Increase energy regen rate by 20%
 
         // Update energy regeneration (this will be handled automatically each frame)
         RegenerateEnergy();
-    }// Method to increase energy regen rate by 10%
+    }// Method to increase energy regen rate by 20%
 }
 

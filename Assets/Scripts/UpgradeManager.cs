@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -60,14 +60,18 @@ public class UpgradeManager : MonoBehaviour
     }
 
     // Fixed upgrade cost for each upgrade
-    private int CalculateUpgradeCost()
+    private int CalculateUpgradeCost(int level)
     {
-        return 5; // Fixed cost for each upgrade
+        if (level == 0)
+        {
+            return 5; // Az első fejlesztés költsége
+        }
+        return 5 + (level * 5); // A további fejlesztések költsége
     }
 
     public void UpgradeMaxHP()
     {
-        int cost = CalculateUpgradeCost();
+        int cost = CalculateUpgradeCost(playerStats.currentHPUpgradeLevel);
         if (playerStats.currentHPUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
@@ -86,7 +90,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeHPRegen()
     {
-        int cost = CalculateUpgradeCost();
+        int cost = CalculateUpgradeCost(playerStats.currentRegenUpgradeLevel);
         if (playerStats.currentRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
@@ -105,7 +109,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeMaxEnergy()
     {
-        int cost = CalculateUpgradeCost();
+        int cost = CalculateUpgradeCost(playerStats.currentEnergyUpgradeLevel);
         if (playerStats.currentEnergyUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
@@ -124,7 +128,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeEnergyRegen()
     {
-        int cost = CalculateUpgradeCost();
+        int cost = CalculateUpgradeCost(playerStats.currentEnergyRegenUpgradeLevel);
         if (playerStats.currentEnergyRegenUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
@@ -143,7 +147,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeDamage()
     {
-        int cost = CalculateUpgradeCost();
+        int cost = CalculateUpgradeCost(playerStats.currentDamageUpgradeLevel);
         if (playerStats.currentDamageUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
@@ -162,7 +166,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void UpgradeAttackSpeed()
     {
-        int cost = CalculateUpgradeCost();
+        int cost = CalculateUpgradeCost(playerStats.currentAttackSpeedUpgradeLevel);
         if (playerStats.currentAttackSpeedUpgradeLevel < playerStats.maxUpgradeLevel && playerCurrency >= cost)
         {
             playerCurrency -= cost;
@@ -182,57 +186,57 @@ public class UpgradeManager : MonoBehaviour
     void UpdateUI()
     {
         // Max HP upgrade
-        maxHPText.text = $"Max HP: {playerStats.maxHP} (Level {playerStats.currentHPUpgradeLevel}/{playerStats.maxUpgradeLevel})";
+        maxHPText.text = $"Max HP (Level {playerStats.currentHPUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         maxHPSlider.value = playerStats.currentHPUpgradeLevel;
         maxHPSlider.maxValue = playerStats.maxUpgradeLevel;
-        maxHPCostText.text = $"Cost: {CalculateUpgradeCost()}";
+        maxHPCostText.text = $"Cost: {CalculateUpgradeCost(playerStats.currentHPUpgradeLevel)}";
         upgradeMaxHPButton.interactable =
             playerStats.currentHPUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost();
+            playerCurrency >= CalculateUpgradeCost(playerStats.currentHPUpgradeLevel);
 
         // HP Regen upgrade
-        hpRegenText.text = $"HP Regen: {playerStats.hpRegen} (Level {playerStats.currentRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
+        hpRegenText.text = $"HP Regen(Level {playerStats.currentRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         hpRegenSlider.value = playerStats.currentRegenUpgradeLevel;
         hpRegenSlider.maxValue = playerStats.maxUpgradeLevel;
-        hpRegenCostText.text = $"Cost: {CalculateUpgradeCost()}";
+        hpRegenCostText.text = $"Cost: {CalculateUpgradeCost(playerStats.currentRegenUpgradeLevel)}";
         upgradeHPRegenButton.interactable =
             playerStats.currentRegenUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost();
+            playerCurrency >= CalculateUpgradeCost(playerStats.currentRegenUpgradeLevel);
 
         // Max Energy upgrade
-        maxEnergyText.text = $"Max Energy: {playerStats.maxEnergy} (Level {playerStats.currentEnergyUpgradeLevel}/{playerStats.maxUpgradeLevel})";
+        maxEnergyText.text = $"Max Energy(Level {playerStats.currentEnergyUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         maxEnergySlider.value = playerStats.currentEnergyUpgradeLevel;
         maxEnergySlider.maxValue = playerStats.maxUpgradeLevel;
-        maxEnergyCostText.text = $"Cost: {CalculateUpgradeCost()}";
+        maxEnergyCostText.text = $"Cost: {CalculateUpgradeCost(playerStats.currentEnergyUpgradeLevel)}";
         upgradeMaxEnergyButton.interactable =
             playerStats.currentEnergyUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost();
+            playerCurrency >= CalculateUpgradeCost(playerStats.currentEnergyUpgradeLevel);
 
         // Energy Regen upgrade
-        energyRegenText.text = $"Energy Regen: {playerStats.energyRegen} (Level {playerStats.currentEnergyRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
+        energyRegenText.text = $"Energy Regen (Level {playerStats.currentEnergyRegenUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         energyRegenSlider.value = playerStats.currentEnergyRegenUpgradeLevel;
         energyRegenSlider.maxValue = playerStats.maxUpgradeLevel;
-        energyRegenCostText.text = $"Cost: {CalculateUpgradeCost()}";
+        energyRegenCostText.text = $"Cost: {CalculateUpgradeCost(playerStats.currentEnergyRegenUpgradeLevel)}";
         upgradeEnergyRegenButton.interactable =
             playerStats.currentEnergyRegenUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost();
+            playerCurrency >= CalculateUpgradeCost(playerStats.currentEnergyRegenUpgradeLevel);
 
         // Damage upgrade
-        damageText.text = $"Damage: {playerStats.damage} (Level {playerStats.currentDamageUpgradeLevel}/{playerStats.maxUpgradeLevel})";
+        damageText.text = $"Damage (Level {playerStats.currentDamageUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         damageSlider.value = playerStats.currentDamageUpgradeLevel;
         damageSlider.maxValue = playerStats.maxUpgradeLevel;
-        damageCostText.text = $"Cost: {CalculateUpgradeCost()}";
+        damageCostText.text = $"Cost: {CalculateUpgradeCost(playerStats.currentDamageUpgradeLevel)}";
         upgradeDamageButton.interactable =
             playerStats.currentDamageUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost();
+            playerCurrency >= CalculateUpgradeCost(playerStats.currentDamageUpgradeLevel);
 
         // Attack Speed upgrade
-        attackSpeedText.text = $"Attack Speed: {playerStats.attackSpeed} (Level {playerStats.currentAttackSpeedUpgradeLevel}/{playerStats.maxUpgradeLevel})";
+        attackSpeedText.text = $"Attack Speed (Level {playerStats.currentAttackSpeedUpgradeLevel}/{playerStats.maxUpgradeLevel})";
         attackSpeedSlider.value = playerStats.currentAttackSpeedUpgradeLevel;
         attackSpeedSlider.maxValue = playerStats.maxUpgradeLevel;
-        attackSpeedCostText.text = $"Cost: {CalculateUpgradeCost()}";
+        attackSpeedCostText.text = $"Cost: {CalculateUpgradeCost(playerStats.currentAttackSpeedUpgradeLevel)}";
         upgradeAttackSpeedButton.interactable =
             playerStats.currentAttackSpeedUpgradeLevel < playerStats.maxUpgradeLevel &&
-            playerCurrency >= CalculateUpgradeCost();
+            playerCurrency >= CalculateUpgradeCost(playerStats.currentAttackSpeedUpgradeLevel);
     }
 }
