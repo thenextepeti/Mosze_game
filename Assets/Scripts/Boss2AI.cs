@@ -35,7 +35,7 @@ public class Boss2AI : MonoBehaviour
             {
                 TurntoTarget();
             }
-            if (distanceToPlayer > shootingDistance)
+            if (distanceToPlayer < shootingDistance)
             {
                 Guns.SmallCannon();
                 Guns.LargeCannon();
