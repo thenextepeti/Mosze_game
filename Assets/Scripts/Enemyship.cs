@@ -30,7 +30,7 @@ public class Enemyship : MonoBehaviour
         // feliratkozás a halál eseményre
 
         Enemydeath.AddListener(GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>().ActiveEnemyDeath);
-
+    }
 
     public void TakeDamage(float damage)
     {
@@ -52,7 +52,6 @@ public class Enemyship : MonoBehaviour
 
         Destroy(gameObject);
     }
-
 
 }
 
